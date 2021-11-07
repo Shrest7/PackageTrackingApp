@@ -1,0 +1,5 @@
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.csproj.AssemblyReference.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.AssemblyInfoInputs.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.AssemblyInfo.cs
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.csproj.CoreCompileInputs.cache
