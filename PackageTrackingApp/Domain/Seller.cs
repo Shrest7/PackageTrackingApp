@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -11,10 +12,13 @@ namespace PackageTrackingApp.Core.Domains
     public class Seller
     {
         private float? _rating;
+        [Key]
         public Guid Guid { get; protected set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public IEnumerable<Package> PackagesSold { get; protected set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
+        public string PhoneNumber { get; protected set; }
+        public string Email { get; protected set; }
         public float? Rating
         {
             get => _rating;

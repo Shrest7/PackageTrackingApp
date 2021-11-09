@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,13 @@ namespace PackageTrackingApp.Core.Domains
         private const float _maxHeight = 25;
         private const float _maxWeight = 25;
 
+        [Key]
         public Guid Guid { get; protected set; }
-        public Customer Customer { get; protected set; }
-        public Seller Seller { get; protected set; }
+        public virtual Customer Customer { get; protected set; }
+        public virtual Seller Seller { get; protected set; }
         public string Name { get; protected set; }
         public bool IsPaid { get; protected set; } = false;
+        public bool IsDelivered { get; protected set; } = false;
         public PackageCategory Category { get; protected set; }
 
         /// <summary>
@@ -41,6 +44,11 @@ namespace PackageTrackingApp.Core.Domains
         /// Width of the package represented in centimeters.
         /// </summary>
         public float Width { get; protected set; }
+
+        protected Package()
+        {
+
+        }
 
         public Package(Customer customer, Seller seller, string name,
             float weight, float height, float length, float width)

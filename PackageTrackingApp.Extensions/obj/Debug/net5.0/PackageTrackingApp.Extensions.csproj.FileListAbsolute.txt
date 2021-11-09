@@ -1,0 +1,12 @@
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\bin\Debug\net5.0\PackageTrackingApp.Extensions.deps.json
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\bin\Debug\net5.0\PackageTrackingApp.Extensions.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\bin\Debug\net5.0\ref\PackageTrackingApp.Extensions.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\bin\Debug\net5.0\PackageTrackingApp.Extensions.pdb
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.csproj.AssemblyReference.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.AssemblyInfoInputs.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.AssemblyInfo.cs
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\ref\PackageTrackingApp.Extensions.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Extensions\obj\Debug\net5.0\PackageTrackingApp.Extensions.pdb

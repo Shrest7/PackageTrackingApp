@@ -7,6 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PackageTrackingApp.Core.Domain;
+using PackageTrackingApp.Core.Repositories;
+using PackageTrackingApp.Infrastructure.Mappers;
+using PackageTrackingApp.Infrastructure.Repositories;
+using PackageTrackingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +33,10 @@ namespace PackageTrackingApp.Api
         {
 
             services.AddControllers();
+            services.AddScoped<IPackageRepository, InMemoryPackageRepository>();
+            services.AddScoped<IPackageService, PackageService>();
+            services.AddSingleton(MappingProfile.Initialize());
+            services.AddDbContext<PackageTrackingContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PackageTrackingApp.Api", Version = "v1" });

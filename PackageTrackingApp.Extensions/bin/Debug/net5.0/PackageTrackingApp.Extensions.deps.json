@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PackageTrackingApp.Extensions/1.0.0": {
+        "runtime": {
+          "PackageTrackingApp.Extensions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PackageTrackingApp.Extensions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
