@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PackageTrackingApp.Core.Repositories;
 using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Infrastructure.Services;
 using PackageTrackingApp.Infrastructure.DTOs;
@@ -11,7 +10,8 @@ using PackageTrackingApp.Infrastructure.DTOs;
 namespace PackageTrackingApp.Api.Controllers
 {
     [Route("{controller}")]
-    public class PackageController : Controller
+    [ApiController]
+    public class PackageController : ControllerBase
     {
         private readonly IPackageService _service;
 
@@ -20,28 +20,44 @@ namespace PackageTrackingApp.Api.Controllers
             _service = service;
         }
 
-        [HttpGet("{name}")]
-        public PackageDto Get([FromRoute]string name)
+        [HttpPost]
+        public async Task<ActionResult<Package>> Post(CreatePackageDto package)
         {
-            return _service.Get(name);
+            return Ok(_service.Add(package));
         }
 
-        [HttpGet("test/{guid}")]
-        public PackageDto Get([FromRoute]Guid guid)
+        [HttpGet("{guid}")]
+        public async Task<PackageDto> Get([FromRoute] Guid guid)
         {
-            return _service.Get(guid);
+            return await _service.Get(guid);
         }
 
         [HttpGet]
-        public List<PackageDto> GetAll()
+        public async Task<ActionResult> GetAll()
         {
-            return _service.GetAll();
+            return Ok(await _service.GetAll());
         }
 
-        [HttpDelete("guid")]
-        public void Delete([FromRoute] Guid guid)
+        [HttpDelete("{guid}")]
+        public async Task<ActionResult> Delete([FromRoute] Guid guid)
         {
-            _service.Remove(guid);
+            await _service.Remove(guid);
+
+            return NoContent();
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteAll()
+        {
+            _service.RemoveAll();
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        public async Task Update([FromRoute] Guid guid, [FromBody] Package package)
+        {
+            await _service.Update(guid, package);
         }
     }
 }

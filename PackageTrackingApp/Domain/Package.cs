@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace PackageTrackingApp.Core.Domains
 {
     public enum PackageCategory { Small, Big, Medium }
-
     public class Package
     {
         private const float _maxWidth = 15;
@@ -45,9 +44,9 @@ namespace PackageTrackingApp.Core.Domains
         /// </summary>
         public float Width { get; protected set; }
 
-        protected Package()
+        public Package()
         {
-
+            
         }
 
         public Package(Customer customer, Seller seller, string name,
@@ -61,7 +60,6 @@ namespace PackageTrackingApp.Core.Domains
             SetHeight(height);
             SetLength(length);
             SetWidth(width);
-            AssignPackageToCategory();
         }
 
         private void SetWidth(float width)
@@ -136,19 +134,19 @@ namespace PackageTrackingApp.Core.Domains
             Weight = weight;
         }
 
-        private void AssignPackageToCategory()
+        public void AssignPackageToCategory()
         {
-            float volume = Weight * Height * Width;
+            float volume = (float)(Length * Height * Width);
 
-            if(volume <= 20000)
+            if (volume <= 20000)
             {
                 Category = PackageCategory.Small;
             }
-            else if(volume > 20000 && volume <= 40000)
+            else if (volume > 20000 && volume <= 40000)
             {
                 Category = PackageCategory.Medium;
             }
-            else if(volume > 40000 && volume <= 80000)
+            else if (volume > 40000 && volume <= 80000)
             {
                 Category = PackageCategory.Big;
             }

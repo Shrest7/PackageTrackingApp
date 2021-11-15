@@ -9,11 +9,6 @@ namespace PackageTrackingApp.Infrastructure.DTOs
 {
     public class PackageDto
     {
-        private const float _maxWidth = 15;
-        private const float _maxLength = 40;
-        private const float _maxHeight = 25;
-        private const float _maxWeight = 25;
-
         public Guid Guid { get; protected set; }
         public string CustomerFirstName { get; protected set; }
         public string CustomerLastName { get; protected set; }
@@ -25,5 +20,6 @@ namespace PackageTrackingApp.Infrastructure.DTOs
         public float Height { get; protected set; }
         public float Length { get; protected set; }
         public float Width { get; protected set; }
+        public string PackageCategory { get; set; }
     }
 }

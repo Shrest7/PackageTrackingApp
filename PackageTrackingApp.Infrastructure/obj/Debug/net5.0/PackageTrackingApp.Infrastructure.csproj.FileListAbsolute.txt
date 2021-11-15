@@ -14,4 +14,3 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\obj\Debug\net5.0\PackageTrackingApp.Infrastructure.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\obj\Debug\net5.0\ref\PackageTrackingApp.Infrastructure.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\obj\Debug\net5.0\PackageTrackingApp.Infrastructure.pdb
-C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\obj\Debug\net5.0\PackageTrackingApp.Infrastructure.csproj.CopyComplete

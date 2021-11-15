@@ -10,11 +10,12 @@ namespace PackageTrackingApp.Infrastructure.Services
 {
     public interface IPackageService
     {
-        PackageDto Get(Guid guid);
-        PackageDto Get(string name);
-        List<PackageDto> GetAll();
-        void Add(Package package);
-        void Remove(Guid guid);
-        void Update(Guid guid);
+        Task<PackageDto> Get(Guid guid);
+        Task<PackageDto> Get(string name);
+        Task<List<PackageDto>> GetAll();
+        Task Add(CreatePackageDto package);
+        Task Remove(Guid guid);
+        void RemoveAll();
+        Task Update(Guid guid, Package package);
     }
 }

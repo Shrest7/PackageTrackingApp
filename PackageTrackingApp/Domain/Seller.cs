@@ -33,6 +33,10 @@ namespace PackageTrackingApp.Core.Domains
             }
         }
 
+        public Seller()
+        {
+
+        }
         public Seller(string email, string phoneNumber)
         {
             Guid = Guid.NewGuid();
