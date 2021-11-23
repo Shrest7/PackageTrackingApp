@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bem060OMSDmDM8JrHKB51I2IKkQ66tfamFW38yl420ZZKE16WUlnQaEJsCa9fvup+rt8SsXsVOxyQdYI5w38/w==",
+  "dgSpecHash": "VsLjazHwudwSKDHC2kAVwODXLlw2JwiBPsD2sa5b/uFlVieL/yxo86Pzk+FYpE/v5pZEkFgSf2LdHRSApV6Igw==",
   "success": true,
   "projectFilePath": "C:\\Users\\dravi\\source\\repos\\PackageTrackingApp\\PackageTrackingApp.Api\\PackageTrackingApp.Api.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,9 @@
     "C:\\Users\\dravi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

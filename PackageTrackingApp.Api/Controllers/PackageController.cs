@@ -23,33 +23,42 @@ namespace PackageTrackingApp.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Package>> Post(CreatePackageDto package)
         {
-            return Ok(_service.Add(package));
+            Guid packageGuid = await _service.AddAsync(package);
+
+            return Created($"package/{packageGuid}", new object());
         }
 
         [HttpGet("{guid}")]
-        public async Task<PackageDto> Get([FromRoute] Guid guid)
+        public async Task<ActionResult> Get([FromRoute] Guid guid)
         {
-            return await _service.Get(guid);
+            var package = await _service.GetAsync(guid);
+
+            if(package is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(package);
         }
 
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
-            return Ok(await _service.GetAll());
+            return Ok(await _service.GetAllAsync());
         }
 
         [HttpDelete("{guid}")]
         public async Task<ActionResult> Delete([FromRoute] Guid guid)
         {
-            await _service.Remove(guid);
+            await _service.RemoveAsync(guid);
 
             return NoContent();
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteAll()
+        public ActionResult DeleteAll()
         {
-            _service.RemoveAll();
+            _service.RemoveAllAsync();
 
             return NoContent();
         }
@@ -57,7 +66,7 @@ namespace PackageTrackingApp.Api.Controllers
         [HttpPut]
         public async Task Update([FromRoute] Guid guid, [FromBody] Package package)
         {
-            await _service.Update(guid, package);
+            await _service.UpdateAsync(guid, package);
         }
     }
 }

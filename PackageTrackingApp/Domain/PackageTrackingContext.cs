@@ -17,6 +17,11 @@ namespace PackageTrackingApp.Core.Domain
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public PackageTrackingContext(DbContextOptions<PackageTrackingContext> options) : base(options)
+        {
+
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_connectionString);

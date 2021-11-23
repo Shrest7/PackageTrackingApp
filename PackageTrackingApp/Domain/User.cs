@@ -16,6 +16,5 @@ namespace PackageTrackingApp.Core.Domains
         public DateTime DateOfBirth { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
         public DateTime LastUpdated { get; protected set; }
-
     }
 }

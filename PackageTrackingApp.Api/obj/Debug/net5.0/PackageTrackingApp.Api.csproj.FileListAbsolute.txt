@@ -66,4 +66,8 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\Humanizer.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\NLog.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\nlog.config
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.csproj.CopyComplete

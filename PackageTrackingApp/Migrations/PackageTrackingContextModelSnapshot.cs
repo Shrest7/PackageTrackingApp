@@ -77,6 +77,9 @@ namespace PackageTrackingApp.Core.Migrations
                     b.Property<Guid?>("CustomerGuid")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime?>("DeliveredAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<float>("Height")
                         .HasColumnType("real");
 

@@ -10,12 +10,12 @@ namespace PackageTrackingApp.Infrastructure.Services
 {
     public interface IPackageService
     {
-        Task<PackageDto> Get(Guid guid);
-        Task<PackageDto> Get(string name);
-        Task<List<PackageDto>> GetAll();
-        Task Add(CreatePackageDto package);
-        Task Remove(Guid guid);
-        void RemoveAll();
-        Task Update(Guid guid, Package package);
+        Task<PackageDto> GetAsync(Guid guid);
+        Task<PackageDto> GetAsync(string name);
+        Task<List<PackageDto>> GetAllAsync();
+        Task<Guid> AddAsync(CreatePackageDto package);
+        Task RemoveAsync(Guid guid);
+        Task RemoveAllAsync();
+        Task UpdateAsync(Guid guid, Package package);
     }
 }

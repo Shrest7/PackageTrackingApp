@@ -10,9 +10,9 @@ namespace PackageTrackingApp.Core.Domains
     public enum PackageCategory { Small, Big, Medium }
     public class Package
     {
-        private const float _maxWidth = 15;
-        private const float _maxLength = 40;
-        private const float _maxHeight = 25;
+        private const float _maxWidth = 25;
+        private const float _maxLength = 90;
+        private const float _maxHeight = 75;
         private const float _maxWeight = 25;
 
         [Key]
@@ -22,6 +22,7 @@ namespace PackageTrackingApp.Core.Domains
         public string Name { get; protected set; }
         public bool IsPaid { get; protected set; } = false;
         public bool IsDelivered { get; protected set; } = false;
+        public DateTime? DeliveredAt { get; protected set; } = null;
         public PackageCategory Category { get; protected set; }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace PackageTrackingApp.Core.Domains
         /// </summary>
         public float Width { get; protected set; }
 
-        public Package()
+        protected Package()
         {
             
         }
@@ -53,13 +54,34 @@ namespace PackageTrackingApp.Core.Domains
             float weight, float height, float length, float width)
         {
             Guid = Guid.NewGuid();
-            Customer = customer;
-            Seller = seller;
+            SetCustomer(customer);
+            SetSeller(seller);
             Name = name;
             SetWeight(weight);
             SetHeight(height);
             SetLength(length);
             SetWidth(width);
+            AssignPackageToCategory();
+        }
+
+        private void SetSeller(Seller seller)
+        {
+            if(seller is null)
+            {
+                throw new ArgumentNullException(nameof(seller), "Seller can not be null!");
+            }
+
+            Seller = seller;
+        }
+
+        private void SetCustomer(Customer customer)
+        {
+            if (customer is null)
+            {
+                throw new ArgumentNullException(nameof(customer), "Customer can not be null!");
+            }
+
+            Customer = customer;
         }
 
         private void SetWidth(float width)
@@ -134,6 +156,17 @@ namespace PackageTrackingApp.Core.Domains
             Weight = weight;
         }
 
+        public void MarkAsDelivered()
+        {
+            if (!IsPaid)
+            {
+                throw new Exception($"Can't mark package {Guid} as delivered - it's unpaid.");
+            }
+
+            IsDelivered = true;
+            DeliveredAt = DateTime.UtcNow;
+        }
+
         public void AssignPackageToCategory()
         {
             float volume = (float)(Length * Height * Width);
@@ -152,7 +185,7 @@ namespace PackageTrackingApp.Core.Domains
             }
             else
             {
-                throw new Exception($"Package is too big! Calculated volume: {volume} " +
+                throw new ArgumentException($"Package is too big! Calculated volume: {volume} " +
                     $"can't exceed 80000 cubic centimeters.");
             }
         }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Infrastructure.Mappers;
+using PackageTrackingApp.Infrastructure.Seeders;
 using PackageTrackingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,10 @@ namespace PackageTrackingApp.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddScoped<IPackageService, PackageService>();
             services.AddSingleton(MappingProfile.Initialize());
+            services.AddScoped<PackageSeeder>();
             services.AddDbContext<PackageTrackingContext>();
             services.AddSwaggerGen(c =>
             {
@@ -41,8 +42,10 @@ namespace PackageTrackingApp.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PackageSeeder packageSeeder)
         {
+            packageSeeder.Seed();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

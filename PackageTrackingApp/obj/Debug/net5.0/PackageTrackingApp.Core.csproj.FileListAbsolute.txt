@@ -15,3 +15,4 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\bin\Debug\net5.0\PackageTrackingApp.Core.runtimeconfig.json
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\bin\Debug\net5.0\PackageTrackingApp.Core.runtimeconfig.dev.json
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.genruntimeconfig.cache
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\obj\Debug\net5.0\PackageTrackingApp.Core.csproj.CopyComplete
