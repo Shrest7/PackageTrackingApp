@@ -42,7 +42,7 @@ namespace PackageTrackingApp.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        public async Task<ActionResult> Get()
         {
             return Ok(await _service.GetAllAsync());
         }
@@ -55,18 +55,12 @@ namespace PackageTrackingApp.Api.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
-        public ActionResult DeleteAll()
+        [HttpPut]
+        public async Task<ActionResult> Update([FromBody] Package package) //TODO
         {
-            _service.RemoveAllAsync();
+            await _service.UpdateAsync(package);
 
             return NoContent();
-        }
-
-        [HttpPut]
-        public async Task Update([FromRoute] Guid guid, [FromBody] Package package)
-        {
-            await _service.UpdateAsync(guid, package);
         }
     }
 }

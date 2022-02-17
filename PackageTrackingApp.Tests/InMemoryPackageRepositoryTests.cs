@@ -15,8 +15,8 @@ namespace PackageTrackingApp.Tests
         public void AddingPackageShouldWork()
         {
             //Arrange
-            Package package = new Package(new Customer("Josh", "Smith"),
-                new Seller("mail@gmail.com", "222333444"), "phone", 5, 3, 2, 1);
+            Package package = new Package(new User(), //TODO, GENERALLY ALL TESTS
+                new User(), "phone", 5, 3, 2, 1);
 
             //Act
 

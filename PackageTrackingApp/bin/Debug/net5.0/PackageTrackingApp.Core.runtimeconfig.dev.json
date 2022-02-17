@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\dravi\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dravi\\.nuget\\packages"
+      "C:\\Users\\dravi\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
 }

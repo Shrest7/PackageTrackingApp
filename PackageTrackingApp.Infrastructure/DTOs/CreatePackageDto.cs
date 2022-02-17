@@ -9,14 +9,8 @@ namespace PackageTrackingApp.Infrastructure.DTOs
 {
     public class CreatePackageDto
     {
-        [Required]
-        [MaxLength(50)]
-        public string CustomerFirstName { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string CustomerLastName { get; set; }
-        public string SellerFirstName { get; set; }
-        public string SellerLastName { get; set; }
+        public Guid SellerGuid { get; set; }
+        public Guid CustomerGuid { get; set; }
         public string Name { get; set; }
         public float Weight { get; set; }
         [Required]

@@ -8,8 +8,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PackageTrackingApp.Core.Domain;
+using PackageTrackingApp.Core.Repositories;
 using PackageTrackingApp.Infrastructure.Mappers;
-using PackageTrackingApp.Infrastructure.Seeders;
+using PackageTrackingApp.Infrastructure.Repositories;
 using PackageTrackingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,10 @@ namespace PackageTrackingApp.Api
             services.AddControllers();
             services.AddScoped<IPackageService, PackageService>();
             services.AddSingleton(MappingProfile.Initialize());
-            services.AddScoped<PackageSeeder>();
+            services.AddScoped<IDataInitializer, DataInitializer>();
             services.AddDbContext<PackageTrackingContext>();
+            services.AddScoped<IPackageRepository, PackageRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PackageTrackingApp.Api", Version = "v1" });
@@ -42,10 +45,8 @@ namespace PackageTrackingApp.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PackageSeeder packageSeeder)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            packageSeeder.Seed();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

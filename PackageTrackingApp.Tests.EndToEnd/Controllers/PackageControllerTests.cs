@@ -53,21 +53,32 @@ namespace PackageTrackingApp.Tests.EndToEnd.Controllers
         {
             var createPackageDto = new CreatePackageDto()
             {
-                CustomerFirstName = "Mike",
-                CustomerLastName = "Wazowski",
+                //CustomerFirstName = "Mike",
+                //CustomerLastName = "Wazowski",
                 Height = 10,
                 Length = 10,
                 Name = "Asus laptop",
-                SellerFirstName = "John",
-                SellerLastName = "Dash",
+                //SellerFirstName = "John",
+                //SellerLastName = "Dash",
                 Weight = 3,
                 Width = 15
             };
 
+            //var createPackageDto = new Package
+            //    (
+            //                    CustomerFirstName = "Mike",
+            //    CustomerLastName = "Wazowski",
+            //    Height = 10,
+            //    Length = 10,
+            //    Name = "Asus laptop",
+            //    SellerFirstName = "John",
+            //    SellerLastName = "Dash",
+            //    Weight = 3,
+            //    Width = 15
+            //    );
+
 
             var content = ConvertObjectToStringContent(createPackageDto);
-
-            var package = JsonConvert.DeserializeObject<Package>(await content.ReadAsStringAsync());
 
             var response = await _client.PostAsync("package", content);
 

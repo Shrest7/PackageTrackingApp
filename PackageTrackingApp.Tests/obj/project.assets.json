@@ -240,6 +240,18 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.12"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/5.0.12": {
         "type": "package",
         "dependencies": {
@@ -2621,6 +2633,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.12": {
+      "sha512": "bnmyVPMWFM0Olt5K0r2aWhkVb1fg3iiqO12mq786pTHxyjnH40C+GTRG2LS7k69lAPkkuj1iRHkqwN9oJtcqMw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.5.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.12": {
@@ -7828,6 +7854,7 @@
     "net5.0": [
       "Autofac.Extras.Moq >= 6.1.0",
       "FluentAssertions >= 6.2.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 5.0.12",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "Moq >= 4.16.1",
       "NUnit >= 3.13.1",
@@ -7837,7 +7864,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dravi\\.nuget\\packages\\": {}
+    "C:\\Users\\dravi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7848,8 +7876,12 @@
       "packagesPath": "C:\\Users\\dravi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\dravi\\source\\repos\\PackageTrackingApp\\PackageTrackingApp.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\dravi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7887,6 +7919,10 @@
             "target": "Package",
             "version": "[6.2.0, )"
           },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[5.0.12, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.9.4, )"
@@ -7923,7 +7959,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

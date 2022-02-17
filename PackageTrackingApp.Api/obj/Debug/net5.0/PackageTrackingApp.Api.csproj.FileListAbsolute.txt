@@ -23,7 +23,6 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\staticwebassets\PackageTrackingApp.Api.StaticWebAssets.Manifest.cache
-C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\staticwebassets\PackageTrackingApp.Api.StaticWebAssets.xml
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\scopedcss\bundle\PackageTrackingApp.Api.styles.css
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.RazorTargetAssemblyInfo.cache
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.dll

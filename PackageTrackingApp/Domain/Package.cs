@@ -17,8 +17,8 @@ namespace PackageTrackingApp.Core.Domains
 
         [Key]
         public Guid Guid { get; protected set; }
-        public virtual Customer Customer { get; protected set; }
-        public virtual Seller Seller { get; protected set; }
+        public virtual User Customer { get; protected set; }
+        public virtual User Seller { get; protected set; }
         public string Name { get; protected set; }
         public bool IsPaid { get; protected set; } = false;
         public bool IsDelivered { get; protected set; } = false;
@@ -50,7 +50,7 @@ namespace PackageTrackingApp.Core.Domains
             
         }
 
-        public Package(Customer customer, Seller seller, string name,
+        public Package(User customer, User seller, string name,
             float weight, float height, float length, float width)
         {
             Guid = Guid.NewGuid();
@@ -64,7 +64,7 @@ namespace PackageTrackingApp.Core.Domains
             AssignPackageToCategory();
         }
 
-        private void SetSeller(Seller seller)
+        private void SetSeller(User seller)
         {
             if(seller is null)
             {
@@ -74,7 +74,7 @@ namespace PackageTrackingApp.Core.Domains
             Seller = seller;
         }
 
-        private void SetCustomer(Customer customer)
+        private void SetCustomer(User customer)
         {
             if (customer is null)
             {

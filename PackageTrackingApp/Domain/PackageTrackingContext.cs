@@ -12,10 +12,13 @@ namespace PackageTrackingApp.Core.Domain
     {
         private readonly string _connectionString = "Server=(localdb)\\mssqllocaldb;Database=PackageTrackingDb;Trusted_Connection=True;";
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Package> Packages { get; set; }
-        public DbSet<Seller> Sellers { get; set; }
         public DbSet<User> Users { get; set; }
+
+        public PackageTrackingContext()
+        {
+
+        }
 
         public PackageTrackingContext(DbContextOptions<PackageTrackingContext> options) : base(options)
         {
@@ -24,7 +27,10 @@ namespace PackageTrackingApp.Core.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(_connectionString);
+            }
         }
     }
 }

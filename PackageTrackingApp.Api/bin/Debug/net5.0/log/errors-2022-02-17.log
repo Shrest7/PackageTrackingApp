@@ -1,0 +1,96 @@
+
+-------------- Error (2022-02-17 12:29:24.0915) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition.Log
+         Exception Type: 
+         Exception Message: 
+         Stack Trace: 
+         Additional Info: An error occurred using a transaction.
+
+
+-------------- Error (2022-02-17 12:30:32.9168) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware+<Invoke>d__9.MoveNext
+         Exception Type: System.ArgumentException
+         Exception Message: Package with id: 4ee378d9-df03-41eb-b7fb-08d9aecfce12 doesn't exist!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.RemoveAsync(Guid guid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 92
+   at PackageTrackingApp.Api.Controllers.PackageController.Delete(Guid guid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 53
+   at lambda_method17(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-17 12:31:11.1203) --------------
+
+         Call Site: Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReportApplicationError
+         Exception Type: System.InvalidOperationException
+         Exception Message: The connection does not support MultipleActiveResultSets.
+         Stack Trace:    at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Dispose(Boolean disposing)
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Dispose()
+   at Microsoft.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.DisposeAsync()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.DisposeAsync()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.DisposeAsync()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.<DisposeAsync>g__Await|15_0(Int32 i, ValueTask vt, List`1 toDispose)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.<DisposeAsync>g__Await|15_0(Int32 i, ValueTask vt, List`1 toDispose)
+   at Microsoft.AspNetCore.Http.Features.RequestServicesFeature.<DisposeAsync>g__Awaited|9_0(RequestServicesFeature servicesFeature, ValueTask vt)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+         Additional Info: Connection ID "18230571293206380546", Request ID "80000017-0000-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+
+
+-------------- Error (2022-02-17 12:31:14.1679) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware+<Invoke>d__9.MoveNext
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 78
+   at PackageTrackingApp.Api.Controllers.PackageController.GetAll() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 47
+   at lambda_method150(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-17 14:05:10.3352) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.InvalidOperationException
+         Exception Message: Error while validating the service descriptor 'ServiceType: PackageTrackingApp.Infrastructure.Services.IPackageService Lifetime: Scoped ImplementationType: PackageTrackingApp.Infrastructure.Services.PackageService': Unable to resolve service for type 'PackageTrackingApp.Core.Repositories.IPackageRepository' while attempting to activate 'PackageTrackingApp.Infrastructure.Services.PackageService'.
+         Stack Trace:    at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-17 14:06:24.8855) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.AggregateException
+         Exception Message: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: PackageTrackingApp.Infrastructure.Services.IPackageService Lifetime: Scoped ImplementationType: PackageTrackingApp.Infrastructure.Services.PackageService': Unable to resolve service for type 'PackageTrackingApp.Core.Repositories.IPackageRepository' while attempting to activate 'PackageTrackingApp.Infrastructure.Services.PackageService'.) (Error while validating the service descriptor 'ServiceType: PackageTrackingApp.Infrastructure.Services.IPackageService Lifetime: Scoped ImplementationType: PackageTrackingApp.Infrastructure.Services.PackageService': Unable to resolve service for type 'PackageTrackingApp.Core.Repositories.IPackageRepository' while attempting to activate 'PackageTrackingApp.Infrastructure.Services.PackageService'.)
+         Stack Trace: 
+         Additional Info: Error init
+

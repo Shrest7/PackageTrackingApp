@@ -15,14 +15,14 @@ namespace PackageTrackingApp.Tests.Domain
         [Test]
         public void PackageConstructor_ShouldThrowAnException()
         {
-            Assert.Throws<ArgumentException>(() => new Package(new Customer(), new Seller(),
+            Assert.Throws<ArgumentException>(() => new Package(new User(), new User(),
                 null, 1, 75, 90, 25));
         }
 
         [Test]
         public void PackageConstructor_ShouldPass()
         {
-            Assert.Throws<ArgumentException>(() => new Package(new Customer(), new Seller(),
+            Assert.Throws<ArgumentException>(() => new Package(new User(), new User(),
                 null, 1.5f, 10, 15, 25));
         }
     }
