@@ -11,36 +11,59 @@ namespace PackageTrackingApp.Infrastructure.Services
     public class DataInitializer : IDataInitializer
     {
         private readonly IPackageService _packageService;
+        private readonly IUserService _userService;
+        private const int _numberOfUsersToInitialize = 4;
 
-        public DataInitializer(IPackageService packageService)
+        public DataInitializer(IPackageService packageService, IUserService userService)
         {
             _packageService = packageService;
+            _userService = userService;
         }
 
-        public Task InitializeDataAsync()
+        public async Task InitializeData()
         {
-            var packages = GetDefaultPackages();
-            foreach (var package in packages)
+            var users = await _userService.GetUsersAsync();
+            Guid[] defaultUsersGuids = new Guid[_numberOfUsersToInitialize];
+
+            if (!users.Any())
             {
-                _packageService.AddAsync(package);
+                defaultUsersGuids = await InitializeUsers();
             }
 
-            return Task.CompletedTask;
+            await InitializePackages(defaultUsersGuids);
         }
 
-        private ISet<CreatePackageDto> GetDefaultPackages()
+        private async Task<Guid[]> InitializeUsers()
         {
-            ISet<CreatePackageDto> packages = new HashSet<CreatePackageDto>
+            Guid[] userGuids = new Guid[_numberOfUsersToInitialize];
+
+            for (int i = 0; i < _numberOfUsersToInitialize; i++)
             {
-                //new CreatePackageDto(new Customer("Mike", "Wazowski"), new Seller("joe44@gmail.com", "509202301"),
-                //    "Nike Shoes", 1, 15, 20, 10),
-                //new CreatePackageDto(new Customer("John", "Williams"), new Seller("bob123@gmail.com", "512956021"),
-                //    "Fila Disruptor", 1, 20, 20, 15),
-                //new CreatePackageDto(new Customer("Emma", "Lol"), new Seller("bill213@gmail.com", "782321694"),
-                //    "Samsung TV", 7, 75, 90, 10)
+                userGuids[i] = await _userService.RegisterAsync($"user{i}@gmail.com", $"user{i}",
+                    $"1233{i}A", $"1233{i}A");
+            }
+
+            return userGuids;
+        }
+
+        private async Task InitializePackages(Guid[] usersGuids)
+        {
+            CreatePackageDto[] packages = new CreatePackageDto[_numberOfUsersToInitialize]
+            {
+                new CreatePackageDto(usersGuids[0], usersGuids[1], "Nike shoes",
+                    1.5f, 10, 15, 20),
+                new CreatePackageDto(usersGuids[2], usersGuids[3], "Fila shoes",
+                    2, 15, 15, 15),
+                new CreatePackageDto(usersGuids[1], usersGuids[3], "iPhone 13",
+                    1, 10, 5, 10),
+                new CreatePackageDto(usersGuids[0], usersGuids[2], "Gucci Ace",
+                    1.5f, 15, 25, 8)
             };
 
-            return packages;
+            for (int i = 0; i < _numberOfUsersToInitialize; i++)
+            {
+                await _packageService.AddAsync(packages[i]);
+            }
         }
     }
 }

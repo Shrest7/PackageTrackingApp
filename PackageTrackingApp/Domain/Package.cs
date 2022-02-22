@@ -17,8 +17,8 @@ namespace PackageTrackingApp.Core.Domains
 
         [Key]
         public Guid Guid { get; protected set; }
-        public virtual User Customer { get; protected set; }
-        public virtual User Seller { get; protected set; }
+        public Guid CustomerGuid { get; protected set; }
+        public Guid SellerGuid { get; protected set; }
         public string Name { get; protected set; }
         public bool IsPaid { get; protected set; } = false;
         public bool IsDelivered { get; protected set; } = false;
@@ -50,12 +50,11 @@ namespace PackageTrackingApp.Core.Domains
             
         }
 
-        public Package(User customer, User seller, string name,
+        public Package(Guid customerGuid, Guid sellerGuid, string name,
             float weight, float height, float length, float width)
         {
             Guid = Guid.NewGuid();
-            SetCustomer(customer);
-            SetSeller(seller);
+            SetTransactionParties(customerGuid, sellerGuid);
             Name = name;
             SetWeight(weight);
             SetHeight(height);
@@ -64,24 +63,15 @@ namespace PackageTrackingApp.Core.Domains
             AssignPackageToCategory();
         }
 
-        private void SetSeller(User seller)
+        private void SetTransactionParties(Guid customerGuid, Guid sellerGuid)
         {
-            if(seller is null)
+            if (string.Equals(customerGuid, sellerGuid))
             {
-                throw new ArgumentNullException(nameof(seller), "Seller can not be null!");
+                throw new Exception("Customer id can not be the same as seller id.");
             }
 
-            Seller = seller;
-        }
-
-        private void SetCustomer(User customer)
-        {
-            if (customer is null)
-            {
-                throw new ArgumentNullException(nameof(customer), "Customer can not be null!");
-            }
-
-            Customer = customer;
+            SellerGuid = sellerGuid;
+            CustomerGuid = customerGuid;
         }
 
         private void SetWidth(float width)

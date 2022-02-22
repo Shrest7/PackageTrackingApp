@@ -44,7 +44,7 @@ namespace PackageTrackingApp.Infrastructure.Services
             return _mapper.Map<Package, PackageDto>(package);
         }
 
-        public async Task<List<PackageDto>> GetAllAsync()
+        public async Task<IEnumerable<PackageDto>> GetAllAsync()
         {
             var packages = await _packageRepository.GetAllAsync();
 
@@ -53,7 +53,7 @@ namespace PackageTrackingApp.Infrastructure.Services
                 throw new ArgumentException($"There are no packages yet!");
             }
 
-            return _mapper.Map<List<Package>, List<PackageDto>>(packages);
+            return _mapper.Map<IEnumerable<Package>, IEnumerable<PackageDto>>(packages);
         }
 
         public async Task RemoveAsync(Guid guid)

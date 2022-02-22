@@ -156,3 +156,4 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests.EndToEnd
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests.EndToEnd\bin\Debug\net5.0\PackageTrackingApp.Core.pdb
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests.EndToEnd\bin\Debug\net5.0\PackageTrackingApp.Extensions.pdb
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests.EndToEnd\bin\Debug\net5.0\PackageTrackingApp.Infrastructure.pdb
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests.EndToEnd\bin\Debug\net5.0\BCrypt.Net-Next.dll

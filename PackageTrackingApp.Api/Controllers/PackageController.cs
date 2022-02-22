@@ -29,9 +29,10 @@ namespace PackageTrackingApp.Api.Controllers
         }
 
         [HttpGet("{guid}")]
-        public async Task<ActionResult> Get([FromRoute] Guid guid)
+        public async Task<ActionResult<PackageDto>> Get([FromRoute] Guid guid)
         {
             var package = await _service.GetAsync(guid);
+
 
             if(package is null)
             {

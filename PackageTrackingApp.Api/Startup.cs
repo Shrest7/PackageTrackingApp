@@ -33,10 +33,12 @@ namespace PackageTrackingApp.Api
         {
             services.AddControllers();
             services.AddScoped<IPackageService, PackageService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddSingleton(MappingProfile.Initialize());
-            services.AddScoped<IDataInitializer, DataInitializer>();
-            services.AddDbContext<PackageTrackingContext>();
+            services.AddTransient<IDataInitializer, DataInitializer>();
+            services.AddDbContext<PackageTrackingContext>(ServiceLifetime.Transient);
             services.AddScoped<IPackageRepository, PackageRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddSwaggerGen(c =>
             {
@@ -45,7 +47,7 @@ namespace PackageTrackingApp.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +61,9 @@ namespace PackageTrackingApp.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            Task initializeDataTask = dataInitializer.InitializeData();
+            initializeDataTask.GetAwaiter().GetResult();
 
             app.UseEndpoints(endpoints =>
             {

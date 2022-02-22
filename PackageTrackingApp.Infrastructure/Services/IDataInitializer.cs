@@ -8,6 +8,6 @@ namespace PackageTrackingApp.Infrastructure.Services
 {
     public interface IDataInitializer
     {
-        Task InitializeDataAsync();
+        Task InitializeData();
     }
 }

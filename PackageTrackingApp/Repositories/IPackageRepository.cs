@@ -10,7 +10,7 @@ namespace PackageTrackingApp.Core.Repositories
     public interface IPackageRepository
     {
         Task<Package> GetAsync(Guid guid);
-        Task<List<Package>> GetAllAsync();
+        Task<IEnumerable<Package>> GetAllAsync();
         Task AddAsync(Package package);
         Task RemoveAsync(Guid guid);
         Task UpdateAsync(Package package);

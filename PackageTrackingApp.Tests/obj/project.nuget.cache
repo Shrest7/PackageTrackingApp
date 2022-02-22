@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "myzr2ZvPXrEqh7pty8HbaCCP6C26kx6FLuJmZUJAwuw09IUOMbVO0oFRv5mEsZJeS3/VysJtjbG5F0BdSXBVBw==",
+  "dgSpecHash": "KcWleg2q3ALDHV4ky0bDEoV5ahwnytPuOt1/WPa/Sv3MpQineMgfQtGRGdPIeySmfKmszfGF5dkUzaUzA21U4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\dravi\\source\\repos\\PackageTrackingApp\\PackageTrackingApp.Tests\\PackageTrackingApp.Tests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\dravi\\.nuget\\packages\\autofac.extras.moq\\6.1.0\\autofac.extras.moq.6.1.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",

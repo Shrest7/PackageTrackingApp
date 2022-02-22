@@ -24,42 +24,15 @@ namespace PackageTrackingApp.Core.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Guid);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sellers",
-                columns: table => new
-                {
-                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rating = table.Column<float>(type: "real", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sellers", x => x.Guid);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
                     Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Login = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdated = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -79,6 +52,7 @@ namespace PackageTrackingApp.Core.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsPaid = table.Column<bool>(type: "bit", nullable: false),
                     IsDelivered = table.Column<bool>(type: "bit", nullable: false),
+                    DeliveredAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Category = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<float>(type: "real", nullable: false),
                     Height = table.Column<float>(type: "real", nullable: false),
@@ -89,15 +63,15 @@ namespace PackageTrackingApp.Core.Migrations
                 {
                     table.PrimaryKey("PK_Packages", x => x.Guid);
                     table.ForeignKey(
-                        name: "FK_Packages_Customers_CustomerGuid",
+                        name: "FK_Packages_Users_CustomerGuid",
                         column: x => x.CustomerGuid,
-                        principalTable: "Customers",
+                        principalTable: "Users",
                         principalColumn: "Guid",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Packages_Sellers_SellerGuid",
+                        name: "FK_Packages_Users_SellerGuid",
                         column: x => x.SellerGuid,
-                        principalTable: "Sellers",
+                        principalTable: "Users",
                         principalColumn: "Guid",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -123,12 +97,6 @@ namespace PackageTrackingApp.Core.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Customers");
-
-            migrationBuilder.DropTable(
-                name: "Sellers");
         }
     }
 }

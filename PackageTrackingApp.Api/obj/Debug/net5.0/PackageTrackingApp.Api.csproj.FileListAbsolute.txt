@@ -70,3 +70,4 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\nlog.config
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\obj\Debug\net5.0\PackageTrackingApp.Api.csproj.CopyComplete
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\bin\Debug\net5.0\BCrypt.Net-Next.dll

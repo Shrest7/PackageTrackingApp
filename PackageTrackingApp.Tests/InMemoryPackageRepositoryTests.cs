@@ -15,8 +15,8 @@ namespace PackageTrackingApp.Tests
         public void AddingPackageShouldWork()
         {
             //Arrange
-            Package package = new Package(new User(), //TODO, GENERALLY ALL TESTS
-                new User(), "phone", 5, 3, 2, 1);
+            Package package = new Package(Guid.NewGuid(), //TODO, GENERALLY ALL TESTS
+                Guid.NewGuid(), "phone", 5, 3, 2, 1);
 
             //Act
 

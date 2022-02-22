@@ -16,14 +16,13 @@ namespace PackageTrackingApp.Infrastructure.Mappers
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Package, PackageDto>()
-                    .ForMember(p => p.CustomerGuid, c => c.MapFrom(d => d.Customer.Guid))
-                    .ForMember(p => p.SellerGuid, c => c.MapFrom(d => d.Seller.Guid))
                     .ForMember(p => p.PackageCategory, c => c.MapFrom(d => d.Category.ToString()));
 
                 cfg.CreateMap<CreatePackageDto, Package>()
-                    .ForPath(p => p.Customer.Guid, c => c.MapFrom(d => d.CustomerGuid))
-                    .ForPath(p => p.Seller.Email, c => c.MapFrom(d => d.SellerGuid))
                     .AfterMap((s, d) => d.AssignPackageToCategory());
+
+                cfg.CreateMap<User, UserDto>()
+                    .ForMember(u => u.CreatedAt, m => m.MapFrom(x => x.CreatedAt.ToString("dd-MM-yyyy")));
             });
 
             return new Mapper(config);

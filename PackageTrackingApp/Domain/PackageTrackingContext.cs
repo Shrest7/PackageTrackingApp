@@ -10,7 +10,7 @@ namespace PackageTrackingApp.Core.Domain
 {
     public class PackageTrackingContext : DbContext
     {
-        private readonly string _connectionString = "Server=(localdb)\\mssqllocaldb;Database=PackageTrackingDb;Trusted_Connection=True;";
+        private readonly string _connectionString = "Server=(localdb)\\mssqllocaldb;Database=PackageTrackingDbV2;Trusted_Connection=True;";
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<User> Users { get; set; }

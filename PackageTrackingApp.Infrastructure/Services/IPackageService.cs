@@ -11,7 +11,7 @@ namespace PackageTrackingApp.Infrastructure.Services
     public interface IPackageService
     {
         Task<PackageDto> GetAsync(Guid guid);
-        Task<List<PackageDto>> GetAllAsync();
+        Task<IEnumerable<PackageDto>> GetAllAsync();
         Task<Guid> AddAsync(CreatePackageDto package);
         Task RemoveAsync(Guid guid);
         Task UpdateAsync(Package package);

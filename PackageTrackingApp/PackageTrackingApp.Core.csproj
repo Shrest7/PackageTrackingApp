@@ -16,4 +16,8 @@
     <ProjectReference Include="..\PackageTrackingApp.Extensions\PackageTrackingApp.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

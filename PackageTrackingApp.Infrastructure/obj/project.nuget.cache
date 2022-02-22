@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+mWuWU121mT2NQf506cG5eb8/wyg/8Ks3nlZ8tHbccLQFfk0Hkr/M6eUIZo1JU4Zqi/eOwdssHzOTNQOuTxQ1w==",
+  "dgSpecHash": "WO9x04/deY0avhteGTtVS0Y2jFGzkn0pZo6gEaMfg91jZiWjy62o0IMWaWbKMky76UhGS57MxyeNKhiwHvtWLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\dravi\\source\\repos\\PackageTrackingApp\\PackageTrackingApp.Infrastructure\\PackageTrackingApp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dravi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

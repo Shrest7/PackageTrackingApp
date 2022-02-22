@@ -45,6 +45,14 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.0.2": {
+        "runtime": {
+          "lib/net5.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.0.2.0"
+          }
+        }
+      },
       "coverlet.collector/3.0.2": {},
       "FluentAssertions/6.2.0": {
         "dependencies": {
@@ -1486,6 +1494,7 @@
       },
       "PackageTrackingApp.Api/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.2",
           "Microsoft.EntityFrameworkCore": "5.0.12",
           "NLog.Web.AspNetCore": "4.14.0",
           "PackageTrackingApp.Core": "1.0.0",
@@ -1514,6 +1523,7 @@
         "dependencies": {
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "BCrypt.Net-Next": "4.0.2",
           "PackageTrackingApp.Core": "1.0.0"
         },
         "runtime": {
@@ -1541,6 +1551,13 @@
       "sha512": "sha512-xSWoVzOipuDU4PeZcUfaZQ+xqXU8QmGv5jrdlxt3MYm9xaOmrefqcfzGQ3SQ+D+8wfBa/ZwSuL0qKOVj080inA==",
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
+    },
+    "BCrypt.Net-Next/4.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LyNKpIpr4GraRD9+xlTviyxxbZpF6J4xJf7DvraC1mR8PSN/KonGc4rt8C/fjkD3vaEvgA7BcvsbHFCOjgczyQ==",
+      "path": "bcrypt.net-next/4.0.2",
+      "hashPath": "bcrypt.net-next.4.0.2.nupkg.sha512"
     },
     "coverlet.collector/3.0.2": {
       "type": "package",

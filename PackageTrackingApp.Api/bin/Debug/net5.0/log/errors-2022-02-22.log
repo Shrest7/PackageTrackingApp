@@ -1,0 +1,762 @@
+
+-------------- Error (2022-02-22 00:43:28.5725) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:43:38.9212) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method22(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:44:40.0752) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:44:48.9837) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method22(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:45:52.6674) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:46:52.5274) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:46:58.9835) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method90(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:48:23.9681) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method90(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:49:11.0879) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:50:45.6499) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:51:36.2093) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:51:47.3868) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method72(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:52:07.6789) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:54:46.6443) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:55:18.8130) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 00:57:36.7150) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition.Log
+         Exception Type: 
+         Exception Message: 
+         Stack Trace: 
+         Additional Info: An error occurred using a transaction.
+
+
+-------------- Error (2022-02-22 00:58:06.4866) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition.Log
+         Exception Type: 
+         Exception Message: 
+         Stack Trace: 
+         Additional Info: An error occurred using a transaction.
+
+
+-------------- Error (2022-02-22 00:59:35.1620) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.InvalidOperationException
+         Exception Message: The 'Configure' method in the type 'PackageTrackingApp.Api.Startup' must have a return type of 'Void'.
+         Stack Trace:    at Microsoft.AspNetCore.Hosting.StartupLoader.FindMethod(Type startupType, String methodName, String environmentName, Type returnType, Boolean required)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.FindConfigureDelegate(Type startupType, String environmentName)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at PackageTrackingApp.Api.Program.Main(String[] args) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Program.cs:line 23
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-22 01:07:54.9858) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.InvalidOperationException
+         Exception Message: The 'Configure' method in the type 'PackageTrackingApp.Api.Startup' must have a return type of 'Void'.
+         Stack Trace:    at Microsoft.AspNetCore.Hosting.StartupLoader.FindMethod(Type startupType, String methodName, String environmentName, Type returnType, Boolean required)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.FindConfigureDelegate(Type startupType, String environmentName)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at PackageTrackingApp.Api.Program.Main(String[] args) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Program.cs:line 23
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-22 01:08:29.1365) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 01:08:33.5408) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method90(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 01:17:05.0677) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.InvalidOperationException
+         Exception Message: Error while validating the service descriptor 'ServiceType: PackageTrackingApp.Infrastructure.Services.IDataInitializer Lifetime: Singleton ImplementationType: PackageTrackingApp.Infrastructure.Services.DataInitializer': Cannot consume scoped service 'PackageTrackingApp.Infrastructure.Services.IPackageService' from singleton 'PackageTrackingApp.Infrastructure.Services.IDataInitializer'.
+         Stack Trace:    at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-22 01:32:39.4029) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 01:32:39.7400) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 01:32:40.7729) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:06:05.5874) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:06:05.8866) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:06:06.9890) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:10:23.9775) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:10:24.2467) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:16:09.5770) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:16:48.1792) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:16:48.4472) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:16:49.3134) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:18:14.0627) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: System.ArgumentException
+         Exception Message: There are no packages yet!
+         Stack Trace:    at PackageTrackingApp.Infrastructure.Services.PackageService.GetAllAsync() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 53
+   at PackageTrackingApp.Api.Controllers.PackageController.Get() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Controllers\PackageController.cs:line 48
+   at lambda_method106(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:18:41.7258) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:18:41.9927) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Fatal (2022-02-22 12:22:52.7518) --------------
+
+         Call Site: Microsoft.AspNetCore.Hosting.HostingLoggerExtensions.ApplicationError
+         Exception Type: System.Exception
+         Exception Message: Customer id can not be the same as seller id.
+         Stack Trace:    at PackageTrackingApp.Core.Domains.Package.SetTransactionParties(Guid customerGuid, Guid sellerGuid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 70
+   at PackageTrackingApp.Core.Domains.Package..ctor(Guid customerGuid, Guid sellerGuid, String name, Single weight, Single height, Single length, Single width) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 57
+   at lambda_method59(Closure , CreatePackageDto , Package , ResolutionContext )
+   at AutoMapper.Mapper.MapCore[TSource,TDestination](TSource source, TDestination destination, ResolutionContext context, Type sourceType, Type destinationType, IMemberMap memberMap)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source, TDestination destination)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at PackageTrackingApp.Infrastructure.Services.PackageService.AddAsync(CreatePackageDto packageDto) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 33
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializePackages(Guid[] usersGuids) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 73
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializeData() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 33
+   at PackageTrackingApp.Api.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Startup.cs:line 66
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         Additional Info: Application startup exception
+
+
+-------------- Error (2022-02-22 12:22:52.8542) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.Exception
+         Exception Message: Customer id can not be the same as seller id.
+         Stack Trace:    at PackageTrackingApp.Core.Domains.Package.SetTransactionParties(Guid customerGuid, Guid sellerGuid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 70
+   at PackageTrackingApp.Core.Domains.Package..ctor(Guid customerGuid, Guid sellerGuid, String name, Single weight, Single height, Single length, Single width) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 57
+   at lambda_method59(Closure , CreatePackageDto , Package , ResolutionContext )
+   at AutoMapper.Mapper.MapCore[TSource,TDestination](TSource source, TDestination destination, ResolutionContext context, Type sourceType, Type destinationType, IMemberMap memberMap)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source, TDestination destination)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at PackageTrackingApp.Infrastructure.Services.PackageService.AddAsync(CreatePackageDto packageDto) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 33
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializePackages(Guid[] usersGuids) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 73
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializeData() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 33
+   at PackageTrackingApp.Api.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Startup.cs:line 66
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at PackageTrackingApp.Api.Program.Main(String[] args) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Program.cs:line 23
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-22 12:24:49.4763) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:24:49.7592) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:26:50.7456) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Error (2022-02-22 12:26:51.0320) --------------
+
+         Call Site: Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`3.Log
+         Exception Type: System.InvalidOperationException
+         Exception Message: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+         Stack Trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+         Additional Info: An exception occurred while iterating over the results of a query for context type 'PackageTrackingApp.Core.Domain.PackageTrackingContext'.
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+
+
+-------------- Fatal (2022-02-22 12:32:02.3243) --------------
+
+         Call Site: Microsoft.AspNetCore.Hosting.HostingLoggerExtensions.ApplicationError
+         Exception Type: System.Exception
+         Exception Message: Customer id can not be the same as seller id.
+         Stack Trace:    at PackageTrackingApp.Core.Domains.Package.SetTransactionParties(Guid customerGuid, Guid sellerGuid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 70
+   at PackageTrackingApp.Core.Domains.Package..ctor(Guid customerGuid, Guid sellerGuid, String name, Single weight, Single height, Single length, Single width) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 57
+   at lambda_method59(Closure , CreatePackageDto , Package , ResolutionContext )
+   at AutoMapper.Mapper.MapCore[TSource,TDestination](TSource source, TDestination destination, ResolutionContext context, Type sourceType, Type destinationType, IMemberMap memberMap)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source, TDestination destination)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at PackageTrackingApp.Infrastructure.Services.PackageService.AddAsync(CreatePackageDto packageDto) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 33
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializePackages(Guid[] usersGuids) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 70
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializeData() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 33
+   at PackageTrackingApp.Api.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Startup.cs:line 66
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         Additional Info: Application startup exception
+
+
+-------------- Error (2022-02-22 12:32:02.3661) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.Exception
+         Exception Message: Customer id can not be the same as seller id.
+         Stack Trace:    at PackageTrackingApp.Core.Domains.Package.SetTransactionParties(Guid customerGuid, Guid sellerGuid) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 70
+   at PackageTrackingApp.Core.Domains.Package..ctor(Guid customerGuid, Guid sellerGuid, String name, Single weight, Single height, Single length, Single width) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp\Domain\Package.cs:line 57
+   at lambda_method59(Closure , CreatePackageDto , Package , ResolutionContext )
+   at AutoMapper.Mapper.MapCore[TSource,TDestination](TSource source, TDestination destination, ResolutionContext context, Type sourceType, Type destinationType, IMemberMap memberMap)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source, TDestination destination)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at PackageTrackingApp.Infrastructure.Services.PackageService.AddAsync(CreatePackageDto packageDto) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\PackageService.cs:line 33
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializePackages(Guid[] usersGuids) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 70
+   at PackageTrackingApp.Infrastructure.Services.DataInitializer.InitializeData() in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Infrastructure\Services\DataInitializer.cs:line 33
+   at PackageTrackingApp.Api.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Startup.cs:line 66
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at PackageTrackingApp.Api.Program.Main(String[] args) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Program.cs:line 23
+         Additional Info: Error init
+
+
+-------------- Error (2022-02-22 12:34:00.0532) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+
+
+-------------- Error (2022-02-22 12:36:52.4523) --------------
+
+         Call Site: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke
+         Exception Type: Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException
+         Exception Message: Conflicting method/path combination "POST {controller}" for actions - PackageTrackingApp.Api.Controllers.PackageController.Post (PackageTrackingApp.Api),PackageTrackingApp.Api.Controllers.UserController.RegisterAsync (PackageTrackingApp.Api). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+         Stack Trace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+         Additional Info: An unhandled exception has occurred while executing the request.
+

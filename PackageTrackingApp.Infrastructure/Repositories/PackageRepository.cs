@@ -24,7 +24,7 @@ namespace PackageTrackingApp.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<Package>> GetAllAsync()
+        public async Task<IEnumerable<Package>> GetAllAsync()
             => await Task.FromResult(_dbContext.Packages.ToList());
 
         public async Task<Package> GetAsync(Guid guid)

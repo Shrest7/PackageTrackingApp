@@ -45,26 +45,6 @@ namespace PackageTrackingApp.Core.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("PackageTrackingApp.Core.Domains.Customer", b =>
-                {
-                    b.Property<Guid>("Guid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Guid");
-
-                    b.ToTable("Customers");
-                });
-
             modelBuilder.Entity("PackageTrackingApp.Core.Domains.Package", b =>
                 {
                     b.Property<Guid>("Guid")
@@ -113,32 +93,6 @@ namespace PackageTrackingApp.Core.Migrations
                     b.ToTable("Packages");
                 });
 
-            modelBuilder.Entity("PackageTrackingApp.Core.Domains.Seller", b =>
-                {
-                    b.Property<Guid>("Guid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("Rating")
-                        .HasColumnType("real");
-
-                    b.HasKey("Guid");
-
-                    b.ToTable("Sellers");
-                });
-
             modelBuilder.Entity("PackageTrackingApp.Core.Domains.User", b =>
                 {
                     b.Property<Guid>("Guid")
@@ -151,10 +105,19 @@ namespace PackageTrackingApp.Core.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("LastUpdated")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
@@ -167,27 +130,17 @@ namespace PackageTrackingApp.Core.Migrations
 
             modelBuilder.Entity("PackageTrackingApp.Core.Domains.Package", b =>
                 {
-                    b.HasOne("PackageTrackingApp.Core.Domains.Customer", "Customer")
-                        .WithMany("PackagesOrdered")
+                    b.HasOne("PackageTrackingApp.Core.Domains.User", "Customer")
+                        .WithMany()
                         .HasForeignKey("CustomerGuid");
 
-                    b.HasOne("PackageTrackingApp.Core.Domains.Seller", "Seller")
-                        .WithMany("PackagesSold")
+                    b.HasOne("PackageTrackingApp.Core.Domains.User", "Seller")
+                        .WithMany()
                         .HasForeignKey("SellerGuid");
 
                     b.Navigation("Customer");
 
                     b.Navigation("Seller");
-                });
-
-            modelBuilder.Entity("PackageTrackingApp.Core.Domains.Customer", b =>
-                {
-                    b.Navigation("PackagesOrdered");
-                });
-
-            modelBuilder.Entity("PackageTrackingApp.Core.Domains.Seller", b =>
-                {
-                    b.Navigation("PackagesSold");
                 });
 #pragma warning restore 612, 618
         }
