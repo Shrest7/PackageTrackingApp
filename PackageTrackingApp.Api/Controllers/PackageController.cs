@@ -6,35 +6,40 @@ using System.Threading.Tasks;
 using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Infrastructure.Services;
 using PackageTrackingApp.Infrastructure.DTOs;
+using PackageTrackingApp.Infrastructure.Commands;
 
 namespace PackageTrackingApp.Api.Controllers
 {
-    [Route("{controller}")]
     [ApiController]
+    [Route("package")]
     public class PackageController : ControllerBase
     {
         private readonly IPackageService _service;
+        private readonly ICommandDispatcher _commandDispatcher;
 
-        public PackageController(IPackageService service)
+        public PackageController(IPackageService service, ICommandDispatcher commandDispatcher)
         {
             _service = service;
+            _commandDispatcher = commandDispatcher;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Package>> Post(CreatePackageDto package)
+        [ProducesResponseType(201)]
+        public async Task<ActionResult<Package>> Post(CreatePackage package)
         {
-            Guid packageGuid = await _service.AddAsync(package);
+            var guid = await _commandDispatcher.DispatchAsync(package);
 
-            return Created($"package/{packageGuid}", new object());
+            return Created($"package/{guid}", null);
         }
 
         [HttpGet("{guid}")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
         public async Task<ActionResult<PackageDto>> Get([FromRoute] Guid guid)
         {
             var package = await _service.GetAsync(guid);
 
-
-            if(package is null)
+            if (package is null)
             {
                 return NotFound();
             }
@@ -49,6 +54,7 @@ namespace PackageTrackingApp.Api.Controllers
         }
 
         [HttpDelete("{guid}")]
+        [ProducesResponseType(204)]
         public async Task<ActionResult> Delete([FromRoute] Guid guid)
         {
             await _service.RemoveAsync(guid);
@@ -57,6 +63,7 @@ namespace PackageTrackingApp.Api.Controllers
         }
 
         [HttpPut]
+        [ProducesResponseType(204)]
         public async Task<ActionResult> Update([FromBody] Package package) //TODO
         {
             await _service.UpdateAsync(package);

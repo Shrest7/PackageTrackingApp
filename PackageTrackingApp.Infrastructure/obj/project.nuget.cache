@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WO9x04/deY0avhteGTtVS0Y2jFGzkn0pZo6gEaMfg91jZiWjy62o0IMWaWbKMky76UhGS57MxyeNKhiwHvtWLw==",
+  "dgSpecHash": "PV83NmrlX2dJ+AuUfHHqhG6tydyNx77mq16NNMfPVvfR5iQaUJ9tiflk2EuD1eWDi8gWQLc1Z4G+Qz4/RE2dsw==",
   "success": true,
   "projectFilePath": "C:\\Users\\dravi\\source\\repos\\PackageTrackingApp\\PackageTrackingApp.Infrastructure\\PackageTrackingApp.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dravi\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\dravi\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\dravi\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",

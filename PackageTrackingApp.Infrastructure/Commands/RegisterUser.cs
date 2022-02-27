@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PackageTrackingApp.Infrastructure.Commands
 {
-    public class RegisterUser
+    public class RegisterUser : ICommand
     {
         public string Email { get; set; }
         public string Login { get; set; }

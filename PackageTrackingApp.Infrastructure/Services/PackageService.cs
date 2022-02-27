@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Core.Repositories;
+using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace PackageTrackingApp.Infrastructure.Services
             _packageRepository = packageRepository;
         }
 
-        public async Task<Guid> AddAsync(CreatePackageDto packageDto)
+        public async Task<Guid> AddAsync(CreatePackage packageDto)
         {
-            var package = _mapper.Map<CreatePackageDto, Package>(packageDto);
+            var package = _mapper.Map<CreatePackage, Package>(packageDto);
 
             await _packageRepository.AddAsync(package);
 

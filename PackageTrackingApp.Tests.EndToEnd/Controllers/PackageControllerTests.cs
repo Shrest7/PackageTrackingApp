@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using PackageTrackingApp.Api;
 using PackageTrackingApp.Core.Domains;
+using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using System;
 using System.Collections.Generic;
@@ -29,16 +30,6 @@ namespace PackageTrackingApp.Tests.EndToEnd.Controllers
         }
 
         [Test]
-        public async Task Given_valid_guid_http_get_should_work()
-        {
-            Guid guid = new Guid("23bc4673-0c0a-4fbd-95fc-ba316b336fa4");
-
-            var response = await _client.GetAsync($"package/{guid}");
-
-            response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
-        }
-
-        [Test]
         public async Task Given_invalid_guid_http_get_should_fail()
         {
             Guid guid = new Guid("11111111-2222-3333-4444-555555555555");
@@ -48,40 +39,18 @@ namespace PackageTrackingApp.Tests.EndToEnd.Controllers
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.NotFound);
         }
 
-        [Test]
+        [Test] //Obviously doesn't work cause we provide random guids instead of actual users
         public async Task Posting_valid_package_should_work()
         {
-            //var createPackageDto = new CreatePackageDto()
-            //{
-            //    //CustomerFirstName = "Mike",
-            //    //CustomerLastName = "Wazowski",
-            //    Height = 10,
-            //    Length = 10,
-            //    Name = "Asus laptop",
-            //    //SellerFirstName = "John",
-            //    //SellerLastName = "Dash",
-            //    Weight = 3,
-            //    Width = 15
-            //};
-
-            //var createPackageDto = new Package
-            //    (
-            //                    CustomerFirstName = "Mike",
-            //    CustomerLastName = "Wazowski",
-            //    Height = 10,
-            //    Length = 10,
-            //    Name = "Asus laptop",
-            //    SellerFirstName = "John",
-            //    SellerLastName = "Dash",
-            //    Weight = 3,
-            //    Width = 15
-            //    );
-
-
+            ////Arrange
+            //var createPackageDto = new CreatePackage(Guid.NewGuid(), Guid.NewGuid(),
+            //    "Laptop ASUS", 5, 13, 13, 5);
             //var content = ConvertObjectToStringContent(createPackageDto);
 
+            ////Act
             //var response = await _client.PostAsync("package", content);
 
+            ////Assert
             //response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
         }
 

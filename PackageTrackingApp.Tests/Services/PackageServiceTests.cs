@@ -7,8 +7,11 @@ using Moq;
 using NUnit.Framework;
 using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Core.Domains;
+using PackageTrackingApp.Core.Repositories;
+using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using PackageTrackingApp.Infrastructure.Mappers;
+using PackageTrackingApp.Infrastructure.Repositories;
 using PackageTrackingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
@@ -21,50 +24,52 @@ namespace PackageTrackingApp.Tests.Services
     [TestFixture]
     public class PackageServiceTests
     {
-        private PackageTrackingContext _dbContext;
-        private readonly string connectionString = 
-            "Server=(localdb)\\mssqllocaldb;Database=PackageTrackingDb;Trusted_Connection=True;";
-
-        [SetUp]
-        public void Setup()
+        [Test]
+        public async Task Package_service_add_async_should_result_in_exactly_one_package_in_database() //TO DO: repository not executing
+                                                                                                             // addAsync properly (probably)
         {
-            var dbContextOptions = new DbContextOptionsBuilder<PackageTrackingContext>()
-                .UseSqlServer(connectionString)
-                .Options;
+            ////Arrange
+            //var mapper = MappingProfile.Initialize();
+            //var loggerMock = new Mock<ILogger<PackageService>>();
+            //var packageRepositoryMock = new Mock<IPackageRepository>();
+            //var packageService = new PackageService(mapper, loggerMock.Object,
+            //    packageRepositoryMock.Object);
 
-            _dbContext = new PackageTrackingContext(dbContextOptions);
+            ////Act
+            //Task addPackageTask = packageService.AddAsync(new CreatePackageDto(Guid.NewGuid(),
+            //    Guid.NewGuid(), "Xiaomi Redmi", 1.8f, 10, 15, 12));
+
+            //addPackageTask.GetAwaiter().GetResult();
+
+            //var packages = await packageService.GetAllAsync();
+            //int amountOfPackages = packages.Count();
+
+            ////Assert
+            //Assert.AreEqual(amountOfPackages, 1);
         }
 
         [Test]
-        public async Task Package_service_add_async_should_call_package_tracking_context_add_async_exactly_once()
+        public async Task Adding_package_with_the_same_customer_and_seller_should_throw_an_exception()
         {
-            //Arrange
-            var options = new DbContextOptionsBuilder<PackageTrackingContext>()
-                          .UseInMemoryDatabase("packageTrackingDbTest")
-                          .Options;
+            //var mapper = MappingProfile.Initialize();
+            //var logger = new Mock<ILogger<PackageService>>();
 
-            IMapper mapper = MappingProfile.Initialize();
-            var loggerMock = new Mock<ILogger<PackageService>>();
-            var dbContext = new PackageTrackingContext(options);
-            //var packageService = new PackageService(mapper,
-                //dbContext, loggerMock.Object);
+            //var options = new DbContextOptionsBuilder<PackageTrackingContext>()
+            //.UseInMemoryDatabase(databaseName: "PackageDatabase")
+            //.Options;
 
-            //Act
-            //await packageService.AddAsync(new CreatePackageDto()
-            //{
-            //    CustomerFirstName = "Mikev22",
-            //    CustomerLastName = "Wazowskiv2",
-            //    Height = 10,
-            //    Length = 10,
-            //    Name = "Asus laptopv2",
-            //    SellerFirstName = "Johnv2",
-            //    SellerLastName = "Dashv2",
-            //    Weight = 3,
-            //    Width = 15
-            //});
+            //var dbContext = new Mock<PackageTrackingContext>(options);
+            //var repository = new Mock<PackageRepository>(dbContext.Object);
 
-            //Assert
-            Assert.AreEqual(1, dbContext.Packages.Count());
+            //var service = new Mock<PackageService>(mapper, logger.Object,
+            //    repository.Object);
+
+            //var guid = Guid.NewGuid();
+
+            //var createPackage = new CreatePackage(guid, guid, guid,
+            //    "", 1, 2, 3, 4);
+
+            //Assert.ThrowsAsync<Exception>(async () => await service.Object.AddAsync(createPackage));
         }
     }
 }

@@ -11,22 +11,23 @@ namespace PackageTrackingApp.Api.Controllers
 {
     [ApiController]
     [Route("{controller}")]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
+        private readonly ICommandDispatcher _commandDispatcher;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, ICommandDispatcher commandDispatcher)
         {
             _userService = userService;
+            _commandDispatcher = commandDispatcher;
         }
 
         [HttpPost]
         public async Task<ActionResult> RegisterAsync(RegisterUser command)
         {
-            await _userService.RegisterAsync(command.Email, command.Login,
-                command.Password, command.ConfirmPassword);
+            var guid = await _commandDispatcher.DispatchAsync(command);
 
-            return Ok();
+            return Created($"user/{guid}", null);
         }
 
         [HttpGet("{userId}")]
@@ -44,5 +45,14 @@ namespace PackageTrackingApp.Api.Controllers
 
             return Ok(users);
         }
+
+        [HttpDelete("{guid}")]
+        public async Task<ActionResult> Delete([FromRoute]Guid guid)
+        {
+            await _userService.DeleteUserAsync(guid);
+
+            return NoContent();
+        }
+
     }
 }

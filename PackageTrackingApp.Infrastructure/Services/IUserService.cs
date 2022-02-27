@@ -12,7 +12,7 @@ namespace PackageTrackingApp.Infrastructure.Services
     {
         Task<UserDto> GetUserAsync(Guid userId);
         Task<IEnumerable<UserDto>> GetUsersAsync();
-        Task LoginAsync(string username, string password);
+        Task LoginAsync(string login, string password);
         Task<Guid> RegisterAsync(string email, string login, string password,
             string confirmPassword);
         Task UpdateUserAsync(User user);

@@ -25,7 +25,8 @@ namespace PackageTrackingApp.Infrastructure.Repositories
         }
 
         public async Task<IEnumerable<Package>> GetAllAsync()
-            => await Task.FromResult(_dbContext.Packages.ToList());
+            => await Task.FromResult(_dbContext.Packages.ToList()
+                .OrderByDescending(x => x.SentAt));
 
         public async Task<Package> GetAsync(Guid guid)
             => await Task.FromResult(_dbContext.Packages.SingleOrDefault(p => p.Guid == guid));

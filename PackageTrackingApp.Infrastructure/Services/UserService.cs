@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BCryptNet = BCrypt.Net.BCrypt;
 using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Core.Repositories;
 using PackageTrackingApp.Infrastructure.DTOs;
@@ -45,7 +44,7 @@ namespace PackageTrackingApp.Infrastructure.Services
         public async Task<IEnumerable<UserDto>> GetUsersAsync()
             => _mapper.Map<IEnumerable<UserDto>>(await _userRepository.GetAllUsersAsync());
 
-        public async Task LoginAsync(string username, string password)
+        public async Task LoginAsync(string login, string password)
         {
             throw new NotImplementedException();
         }
@@ -65,7 +64,6 @@ namespace PackageTrackingApp.Infrastructure.Services
                 throw new Exception($"Login {login} is already taken.");
             }
 
-            var hashedPassword = BCryptNet.HashPassword(password);
             user = new User(email, login, Roles.User, password, confirmPassword);
 
             await _userRepository.AddUserAsync(user);

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PackageTrackingApp.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +12,23 @@ namespace PackageTrackingApp.Core.Domains
     public enum PackageCategory { Small, Big, Medium }
     public class Package
     {
-        private const float _maxWidth = 25;
-        private const float _maxLength = 90;
-        private const float _maxHeight = 75;
+        private const float _maxDimensionLength = 150;
+        private const float _maxSumOfDimensions = 300;
         private const float _maxWeight = 25;
 
         [Key]
         public Guid Guid { get; protected set; }
+        [Required]
         public Guid CustomerGuid { get; protected set; }
+        [Required]
         public Guid SellerGuid { get; protected set; }
+        [Required]
+        public Guid CourierGuid { get; protected set; }
         public string Name { get; protected set; }
         public bool IsPaid { get; protected set; } = false;
         public bool IsDelivered { get; protected set; } = false;
+        //public Address Destination { get; protected set; }
+        public DateTime? SentAt { get; protected set; }
         public DateTime? DeliveredAt { get; protected set; } = null;
         public PackageCategory Category { get; protected set; }
 
@@ -50,17 +57,30 @@ namespace PackageTrackingApp.Core.Domains
             
         }
 
-        public Package(Guid customerGuid, Guid sellerGuid, string name,
-            float weight, float height, float length, float width)
+        public Package(Guid customerGuid, Guid sellerGuid, Guid courierGuid,
+            string name, float weight, float height, float length, float width)
         {
             Guid = Guid.NewGuid();
-            SetTransactionParties(customerGuid, sellerGuid);
+            SentAt = DateTime.UtcNow;
             Name = name;
+            CourierGuid = courierGuid;
+            SetTransactionParties(customerGuid, sellerGuid);
             SetWeight(weight);
             SetHeight(height);
             SetLength(length);
             SetWidth(width);
+            VerifySumOfDimensions();
             AssignPackageToCategory();
+        }
+
+        private void VerifySumOfDimensions()
+        {
+            float sum = Width + Length + Height;
+
+            if(sum > _maxSumOfDimensions)
+            {
+                throw new Exception("Sum of dimensions can not exceed 300cm.");
+            }
         }
 
         private void SetTransactionParties(Guid customerGuid, Guid sellerGuid)
@@ -76,17 +96,17 @@ namespace PackageTrackingApp.Core.Domains
 
         private void SetWidth(float width)
         {
-            if (Width == width)
-            {
-                return;
-            }
             if (width <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(width), "Width must be greater than 0!");
             }
-            if (width > _maxWidth)
+            if (Width == width)
             {
-                throw new ArgumentOutOfRangeException(nameof(width), $"Package's width can't exceed {_maxWidth}cm!");
+                return;
+            }
+            if (width > _maxDimensionLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(width), $"Package's width can't exceed {_maxDimensionLength}cm!");
             }
 
             Width = width;
@@ -94,17 +114,17 @@ namespace PackageTrackingApp.Core.Domains
 
         private void SetLength(float length)
         {
-            if (Length == length)
-            {
-                return;
-            }
             if (length <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(length), "Length must be greater than 0!");
             }
-            if (length > _maxLength)
+            if (Length == length)
             {
-                throw new ArgumentOutOfRangeException(nameof(length), $"Package's length can't exceed {_maxLength}cm!");
+                return;
+            }
+            if (length > _maxDimensionLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), $"Package's length can't exceed {_maxDimensionLength}cm!");
             }
 
             Length = length;
@@ -112,17 +132,17 @@ namespace PackageTrackingApp.Core.Domains
 
         private void SetHeight(float height)
         {
-            if (Height == height)
-            {
-                return;
-            }
             if (height <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(height), "Height must be greater than 0!");
             }
-            if (height > _maxHeight)
+            if (Height == height)
             {
-                throw new ArgumentOutOfRangeException(nameof(height), $"Package's height can't exceed {_maxHeight}cm!");
+                return;
+            }
+            if (height > _maxDimensionLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(height), $"Package's height can't exceed {_maxDimensionLength}cm!");
             }
 
             Height = height;
@@ -130,13 +150,13 @@ namespace PackageTrackingApp.Core.Domains
 
         private void SetWeight(float weight)
         {
-            if(Weight == weight)
-            {
-                return;
-            }
-            if(weight <= 0)
+            if (weight <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(weight), "Weight must be greater than 0!");
+            }
+            if (Weight == weight)
+            {
+                return;
             }
             if(weight > _maxWeight)
             {
@@ -161,22 +181,17 @@ namespace PackageTrackingApp.Core.Domains
         {
             float volume = (float)(Length * Height * Width);
 
-            if (volume <= 20000)
+            if (volume <= 200000)
             {
                 Category = PackageCategory.Small;
             }
-            else if (volume > 20000 && volume <= 40000)
+            else if (volume > 200000 && volume <= 500000)
             {
                 Category = PackageCategory.Medium;
             }
-            else if (volume > 40000 && volume <= 80000)
+            else if (volume > 500000)
             {
                 Category = PackageCategory.Big;
-            }
-            else
-            {
-                throw new ArgumentException($"Package is too big! Calculated volume: {volume} " +
-                    $"can't exceed 80000 cubic centimeters.");
             }
         }
     }

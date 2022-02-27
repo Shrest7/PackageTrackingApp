@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace PackageTrackingApp.Core.Domains
 {
@@ -13,11 +14,13 @@ namespace PackageTrackingApp.Core.Domains
     {
         [Key]
         public Guid Guid { get; protected set; }
+        [Required]
         public string Login { get; protected set; }
+        [Required]
         public string Password { get; protected set; }
-        public string Username { get; protected set; }
-        public string Role { get; protected set; }
+        [Required]
         public string Email { get; protected set; }
+        public string Role { get; protected set; }
         public DateTime DateOfBirth { get; protected set; }
         public DateTime CreatedAt { get; protected set; } = DateTime.UtcNow;
         public DateTime LastUpdated { get; protected set; }
@@ -74,7 +77,9 @@ namespace PackageTrackingApp.Core.Domains
                 throw new Exception("Passwords do not match!");
             }
 
-            Password = password;
+            var hashedPassword = BCryptNet.HashPassword(password);
+
+            Password = hashedPassword;
         }
 
         private void SetRole(string role)

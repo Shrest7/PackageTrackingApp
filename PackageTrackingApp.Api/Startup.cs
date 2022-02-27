@@ -1,3 +1,4 @@
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,12 +10,14 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Core.Repositories;
+using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.Mappers;
 using PackageTrackingApp.Infrastructure.Repositories;
 using PackageTrackingApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace PackageTrackingApp.Api
@@ -32,19 +35,20 @@ namespace PackageTrackingApp.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IPackageService, PackageService>();
-            services.AddScoped<IUserService, UserService>();
             services.AddSingleton(MappingProfile.Initialize());
-            services.AddTransient<IDataInitializer, DataInitializer>();
             services.AddDbContext<PackageTrackingContext>(ServiceLifetime.Transient);
-            services.AddScoped<IPackageRepository, PackageRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PackageTrackingApp.Api", Version = "v1" });
             });
         }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyTypes(Assembly.Load("PackageTrackingApp.Infrastructure"))
+                .AsImplementedInterfaces();
+        } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDataInitializer dataInitializer)

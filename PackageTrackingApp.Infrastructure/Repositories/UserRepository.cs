@@ -26,11 +26,15 @@ namespace PackageTrackingApp.Infrastructure.Repositories
 
         public async Task DeleteUserAsync(Guid userId)
         {
-            throw new NotImplementedException();
+            var user = await GetUserByIdAsync(userId);
+
+            _dbContext.Remove(user);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
-            => await Task.FromResult(_dbContext.Users);
+            => await Task.FromResult(_dbContext.Users
+                .OrderBy(x => x.Login));
 
         public async Task<User> GetUserByIdAsync(Guid userId)
             => await Task.FromResult(_dbContext.Users.SingleOrDefault(u => u.Guid == userId));

@@ -19,6 +19,31 @@ namespace PackageTrackingApp.Core.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("PackageTrackingApp.Core.Domain.Courier", b =>
+                {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfEmployment")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Guid");
+
+                    b.ToTable("Couriers");
+                });
+
             modelBuilder.Entity("PackageTrackingApp.Core.Domains.Address", b =>
                 {
                     b.Property<Guid>("Guid")
@@ -54,7 +79,10 @@ namespace PackageTrackingApp.Core.Migrations
                     b.Property<int>("Category")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("CustomerGuid")
+                    b.Property<Guid>("CourierGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CustomerGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("DeliveredAt")
@@ -75,8 +103,11 @@ namespace PackageTrackingApp.Core.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("SellerGuid")
+                    b.Property<Guid>("SellerGuid")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("SentAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<float>("Weight")
                         .HasColumnType("real");
@@ -85,10 +116,6 @@ namespace PackageTrackingApp.Core.Migrations
                         .HasColumnType("real");
 
                     b.HasKey("Guid");
-
-                    b.HasIndex("CustomerGuid");
-
-                    b.HasIndex("SellerGuid");
 
                     b.ToTable("Packages");
                 });
@@ -106,41 +133,26 @@ namespace PackageTrackingApp.Core.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("LastUpdated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Login")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Guid");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("PackageTrackingApp.Core.Domains.Package", b =>
-                {
-                    b.HasOne("PackageTrackingApp.Core.Domains.User", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerGuid");
-
-                    b.HasOne("PackageTrackingApp.Core.Domains.User", "Seller")
-                        .WithMany()
-                        .HasForeignKey("SellerGuid");
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Seller");
                 });
 #pragma warning restore 612, 618
         }

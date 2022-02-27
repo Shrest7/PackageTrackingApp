@@ -18,6 +18,7 @@ namespace PackageTrackingApp.Infrastructure.DTOs
         public float Height { get; private set; }
         public float Length { get; private set; }
         public float Width { get; private set; }
+        public string SentAt { get; private set; }
         public string PackageCategory { get; private set; }
 
         protected PackageDto()

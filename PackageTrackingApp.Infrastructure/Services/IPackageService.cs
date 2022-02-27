@@ -1,4 +1,5 @@
 ﻿using PackageTrackingApp.Core.Domains;
+using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace PackageTrackingApp.Infrastructure.Services
     {
         Task<PackageDto> GetAsync(Guid guid);
         Task<IEnumerable<PackageDto>> GetAllAsync();
-        Task<Guid> AddAsync(CreatePackageDto package);
+        Task<Guid> AddAsync(CreatePackage package);
         Task RemoveAsync(Guid guid);
         Task UpdateAsync(Package package);
     }
