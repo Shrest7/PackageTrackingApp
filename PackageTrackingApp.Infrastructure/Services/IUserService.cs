@@ -14,7 +14,7 @@ namespace PackageTrackingApp.Infrastructure.Services
         Task<IEnumerable<UserDto>> GetUsersAsync();
         Task LoginAsync(string login, string password);
         Task<Guid> RegisterAsync(string email, string login, string password,
-            string confirmPassword);
+            string confirmPassword, DateTime dateOfBirth);
         Task UpdateUserAsync(User user);
         Task DeleteUserAsync(Guid userId);
     }

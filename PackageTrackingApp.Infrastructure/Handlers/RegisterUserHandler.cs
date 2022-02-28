@@ -20,7 +20,7 @@ namespace PackageTrackingApp.Infrastructure.Handlers
         public async Task<Guid> HandleAsync(RegisterUser command)
         {
             return await _userService.RegisterAsync(command.Email, command.Login, command.Password,
-                command.ConfirmPassword);
+                command.ConfirmPassword, command.DateOfBirth);
         }
     }
 }

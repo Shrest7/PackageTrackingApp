@@ -31,6 +31,9 @@ namespace PackageTrackingApp.Core.Domains
         public DateTime? SentAt { get; protected set; }
         public DateTime? DeliveredAt { get; protected set; } = null;
         public PackageCategory Category { get; protected set; }
+        public User Seller { get; set; }
+        public User Customer { get; set; }
+        public Courier Courier { get; set; }
 
         /// <summary>
         /// Weight of the package represented in kilograms.
@@ -60,7 +63,6 @@ namespace PackageTrackingApp.Core.Domains
         public Package(Guid customerGuid, Guid sellerGuid, Guid courierGuid,
             string name, float weight, float height, float length, float width)
         {
-            Guid = Guid.NewGuid();
             SentAt = DateTime.UtcNow;
             Name = name;
             CourierGuid = courierGuid;
@@ -85,6 +87,16 @@ namespace PackageTrackingApp.Core.Domains
 
         private void SetTransactionParties(Guid customerGuid, Guid sellerGuid)
         {
+            if (customerGuid.Equals(Guid.Empty))
+            {
+                throw new Exception("Customer id can not be empty.");
+            }
+
+            if (sellerGuid.Equals(Guid.Empty))
+            {
+                throw new Exception("Seller id can not be empty.");
+            }
+
             if (string.Equals(customerGuid, sellerGuid))
             {
                 throw new Exception("Customer id can not be the same as seller id.");

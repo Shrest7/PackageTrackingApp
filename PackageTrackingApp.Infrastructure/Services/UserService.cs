@@ -50,7 +50,7 @@ namespace PackageTrackingApp.Infrastructure.Services
         }
 
         public async Task<Guid> RegisterAsync(string email, string login, string password,
-            string confirmPassword)
+            string confirmPassword, DateTime dateOfBirth)
         {
             var user = await _userRepository.GetUserByEmailAsync(email);
             if(user is not null)
@@ -64,7 +64,8 @@ namespace PackageTrackingApp.Infrastructure.Services
                 throw new Exception($"Login {login} is already taken.");
             }
 
-            user = new User(email, login, Roles.User, password, confirmPassword);
+            user = new User(email, login, Roles.User, password, confirmPassword,
+                dateOfBirth);
 
             await _userRepository.AddUserAsync(user);
 

@@ -21,5 +21,7 @@ namespace PackageTrackingApp.Extensions
 
         public static bool IsPhoneNumber(this string number)
             => PhoneNumberRegex.IsMatch(number);
+
+
     }
 }

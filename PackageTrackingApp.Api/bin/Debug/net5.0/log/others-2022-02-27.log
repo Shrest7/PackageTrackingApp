@@ -79,3 +79,27 @@
 2022-02-27 15:38:37.1531|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
 2022-02-27 15:38:37.1531|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
 2022-02-27 15:41:37.2046|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:22:33.4117|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:22:45.9502|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:22:45.9502|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:22:45.9737|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
+2022-02-27 23:24:59.0831|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:25:02.5028|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:25:02.5488|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:25:02.5551|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
+2022-02-27 23:28:30.4975|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:28:33.7870|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:28:33.7959|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:28:33.8055|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
+2022-02-27 23:32:29.3597|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:32:33.1756|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:32:33.1836|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:32:33.1836|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
+2022-02-27 23:54:44.3391|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:54:49.9074|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:54:49.9156|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:54:49.9156|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 
+2022-02-27 23:59:14.6966|DEBUG|PackageTrackingApp.Api.Program|Initialising main function 
+2022-02-27 23:59:17.4937|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-02-27 23:59:17.4937|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-02-27 23:59:17.4937|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api 

@@ -25,7 +25,7 @@ namespace PackageTrackingApp.Api.Controllers
 
         [HttpPost]
         [ProducesResponseType(201)]
-        public async Task<ActionResult<Package>> Post(CreatePackage package)
+        public async Task<ActionResult<Package>> Post([FromBody] CreatePackage package)
         {
             var guid = await _commandDispatcher.DispatchAsync(package);
 

@@ -69,7 +69,7 @@ namespace PackageTrackingApp.Infrastructure.Services
             for (int i = 0; i < _numberOfUsersToInitialize; i++)
             {
                 userGuids[i] = await _userService.RegisterAsync($"user{i}@gmail.com", $"user{i}",
-                    $"1233{i}A", $"1233{i}A");
+                    $"1233{i}A", $"1233{i}A", DateTime.Parse($"199{i}-01-1{i}"));
             }
 
             return userGuids;

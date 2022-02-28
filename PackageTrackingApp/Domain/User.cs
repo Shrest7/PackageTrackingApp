@@ -22,7 +22,7 @@ namespace PackageTrackingApp.Core.Domains
         public string Email { get; protected set; }
         public string Role { get; protected set; }
         public DateTime DateOfBirth { get; protected set; }
-        public DateTime CreatedAt { get; protected set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; init; }
         public DateTime LastUpdated { get; protected set; }
 
         public User()
@@ -31,14 +31,29 @@ namespace PackageTrackingApp.Core.Domains
         }
 
         public User(string email, string login, string role,
-            string password, string confirmPassword)
+            string password, string confirmPassword, DateTime dateOfBirth)
         {
-            Guid = Guid.NewGuid();
+            CreatedAt = DateTime.UtcNow;
             SetLogin(login);
             SetEmail(email);
             SetRole(role);
             SetPassword(password, confirmPassword);
+            SetDateOfBirth(dateOfBirth);
         }
+
+        private void SetDateOfBirth(DateTime dateOfBirth)
+        {
+            var age = dateOfBirth.CalculateAge();
+
+            if(age < 12)
+            {
+                throw new Exception("You need to be at least 12 years old to use" +
+                    "our services.");
+            }
+
+            DateOfBirth = dateOfBirth;
+        }
+
 
         private void SetLogin(string login)
         {

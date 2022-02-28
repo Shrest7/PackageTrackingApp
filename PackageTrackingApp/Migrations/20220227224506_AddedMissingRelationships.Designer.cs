@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PackageTrackingApp.Core.Domain;
 
 namespace PackageTrackingApp.Core.Migrations
 {
     [DbContext(typeof(PackageTrackingContext))]
-    partial class PackageTrackingContextModelSnapshot : ModelSnapshot
+    [Migration("20220227224506_AddedMissingRelationships")]
+    partial class AddedMissingRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
