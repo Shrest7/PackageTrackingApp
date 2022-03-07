@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PackageTrackingApp.Core.Domain;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.JsonPatch;
+using PackageTrackingApp.Infrastructure.Commands;
 
 namespace PackageTrackingApp.Infrastructure.Services
 {
@@ -26,22 +28,18 @@ namespace PackageTrackingApp.Infrastructure.Services
             _logger = logger;
         }
 
-        public async Task DeleteUserAsync(Guid userId)
+        public async Task DeleteAsync(Guid userId)
         {
-            var user = _userRepository.GetUserByIdAsync(userId);
-
-            if(user is null)
-            {
+            var user = _userRepository.GetUserByIdAsync(userId) ??
                 throw new Exception($"User with id {userId} doesn't exist.");
-            }
 
             await _userRepository.DeleteUserAsync(userId);
         }
 
-        public async Task<UserDto> GetUserAsync(Guid userId)
+        public async Task<UserDto> GetAsync(Guid userId)
             => _mapper.Map<UserDto>(await _userRepository.GetUserByIdAsync(userId));
 
-        public async Task<IEnumerable<UserDto>> GetUsersAsync()
+        public async Task<IEnumerable<UserDto>> GetAllAsync()
             => _mapper.Map<IEnumerable<UserDto>>(await _userRepository.GetAllUsersAsync());
 
         public async Task LoginAsync(string login, string password)
@@ -72,9 +70,17 @@ namespace PackageTrackingApp.Infrastructure.Services
             return user.Guid;
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async Task UpdateAsync(Guid guid, JsonPatchDocument<UpdateUser> patchDoc)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByIdAsync(guid);
+
+            var apiModel = _mapper.Map<User, UpdateUser>(user);
+
+            patchDoc.ApplyTo(apiModel);
+
+            _mapper.Map(apiModel, user);
+
+            await _userRepository.UpdateUserAsync(user);
         }
     }
 }

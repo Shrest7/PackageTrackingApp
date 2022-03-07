@@ -35,9 +35,19 @@ namespace PackageTrackingApp.Infrastructure.Mappers
                 cfg.CreateMap<Courier, CourierDto>()
                    .ForMember(x => x.Experience, y => y.MapFrom(z =>
                        z.DateOfEmployment != null ? 
-                       (float?) DateTime.UtcNow.Subtract(z.DateOfEmployment.Value).TotalDays :
+                       (float?) DateTime.UtcNow.Subtract(z.DateOfEmployment.Value).TotalDays / 365.25 :
                        null
                    ));
+
+                cfg.CreateMap<PatchPackage, Package>();
+                cfg.CreateMap<Package, PatchPackage>();
+
+                cfg.CreateMap<UpdateUser, User>();
+                cfg.CreateMap<User, UpdateUser>();
+
+                cfg.CreateMap<UpdatePackage, Package>();
+
+                cfg.CreateMap<UpdateCourier, Courier>();
             });
 
             return new Mapper(config);

@@ -12,6 +12,7 @@ namespace PackageTrackingApp.Infrastructure.DTOs
         public Guid Guid { get; private set; }
         public Guid CustomerGuid { get; private set; }
         public Guid SellerGuid { get; private set; }
+        public Guid CourierGuid { get; private set; }
         public string Name { get; private set; }
         public bool IsPaid { get; private set; }
         public float Weight { get; private set; }

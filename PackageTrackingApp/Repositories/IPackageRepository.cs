@@ -1,4 +1,5 @@
-﻿using PackageTrackingApp.Core.Domains;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using PackageTrackingApp.Core.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;

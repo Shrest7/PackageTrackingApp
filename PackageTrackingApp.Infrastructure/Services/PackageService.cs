@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using PackageTrackingApp.Core.Domain;
@@ -59,22 +60,37 @@ namespace PackageTrackingApp.Infrastructure.Services
 
         public async Task RemoveAsync(Guid guid)
         {
-            var package = await _packageRepository.GetAsync(guid);
-
-            if (package is null)
-            {
+            var package = await _packageRepository.GetAsync(guid) ??
                 throw new ArgumentException($"Package with id: {guid} doesn't exist!");
-            }
 
             await _packageRepository.RemoveAsync(guid);
         }
 
-        public async Task UpdateAsync(Package package)
+        public async Task UpdateAsync(Guid guid, 
+            UpdatePackage updatePackage)
         {
-            if (package is null)
+            var package = await _packageRepository.GetAsync(guid) ??
+                throw new ArgumentException($"Package with id: {guid} doesn't exist!");
+
+            _mapper.Map(updatePackage, package);
+
+            await _packageRepository.UpdateAsync(package);
+        }
+
+        public async Task UpdateAsync(Guid packageId, JsonPatchDocument<PatchPackage> patchDoc)
+        {
+            var package = await _packageRepository.GetAsync(packageId);
+
+            if(package is null)
             {
                 throw new ArgumentException($"Package with id: {package.Guid} doesn't exist!");
             }
+
+            var apiModel = _mapper.Map<PatchPackage>(package);
+
+            patchDoc.ApplyTo(apiModel);
+
+            _mapper.Map(apiModel, package);
 
             await _packageRepository.UpdateAsync(package);
         }

@@ -1,6 +1,8 @@
-﻿using PackageTrackingApp.Core.Domain;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Core.Repositories;
+using PackageTrackingApp.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +42,7 @@ namespace PackageTrackingApp.Infrastructure.Repositories
 
         public async Task UpdateAsync(Package package)
         {
-            var packageOldVersion = _dbContext.Packages.SingleOrDefault(p => p.Guid == package.Guid);
-            _dbContext.Packages.Remove(packageOldVersion);
-            await _dbContext.Packages.AddAsync(package);
+            _dbContext.Packages.Update(package);
             await _dbContext.SaveChangesAsync();
         }
     }

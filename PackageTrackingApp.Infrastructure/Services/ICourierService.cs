@@ -14,5 +14,6 @@ namespace PackageTrackingApp.Infrastructure.Services
         Task<IEnumerable<CourierDto>> GetAllCouriersAsync();
         Task<Guid> AddCourierAsync(CreateCourier command);
         Task DeleteCourierAsync(Guid guid);
+        Task UpdateCourierAsync(Guid guid, UpdateCourier updateCourier);
     }
 }

@@ -17,7 +17,7 @@ namespace PackageTrackingApp.Core.Domains
         [Required]
         public string Login { get; protected set; }
         [Required]
-        public string Password { get; protected set; }
+        public string Password { get; private set; }
         [Required]
         public string Email { get; protected set; }
         public string Role { get; protected set; }
@@ -52,6 +52,7 @@ namespace PackageTrackingApp.Core.Domains
             }
 
             DateOfBirth = dateOfBirth;
+            LastUpdated = DateTime.UtcNow;
         }
 
 
@@ -68,6 +69,7 @@ namespace PackageTrackingApp.Core.Domains
             }
 
             Login = login;
+            LastUpdated = DateTime.UtcNow;
         }
 
         private void SetPassword(string password, string confirmPassword)
@@ -95,6 +97,7 @@ namespace PackageTrackingApp.Core.Domains
             var hashedPassword = BCryptNet.HashPassword(password);
 
             Password = hashedPassword;
+            LastUpdated = DateTime.UtcNow;
         }
 
         private void SetRole(string role)
@@ -111,6 +114,7 @@ namespace PackageTrackingApp.Core.Domains
             }
 
             Role = role;
+            LastUpdated = DateTime.UtcNow;
         }
 
         private void SetEmail(string email)
@@ -126,6 +130,7 @@ namespace PackageTrackingApp.Core.Domains
             }
 
             Email = email;
+            LastUpdated = DateTime.UtcNow;
         }
     }
 }

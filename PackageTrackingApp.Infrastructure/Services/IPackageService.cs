@@ -1,4 +1,5 @@
-﻿using PackageTrackingApp.Core.Domains;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using System;
@@ -15,6 +16,7 @@ namespace PackageTrackingApp.Infrastructure.Services
         Task<IEnumerable<PackageDto>> GetAllAsync();
         Task<Guid> AddAsync(CreatePackage package);
         Task RemoveAsync(Guid guid);
-        Task UpdateAsync(Package package);
+        Task UpdateAsync(Guid guid, UpdatePackage package);
+        Task UpdateAsync(Guid packageId, JsonPatchDocument<PatchPackage> patchDoc);
     }
 }

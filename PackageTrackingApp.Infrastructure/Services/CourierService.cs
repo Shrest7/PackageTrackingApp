@@ -33,12 +33,23 @@ namespace PackageTrackingApp.Infrastructure.Services
         {
             var courierToDelete = await _courierRepository.GetCourier(guid);
 
-            if(courierToDelete is null)
+            if (courierToDelete is null)
             {
-                Console.WriteLine($"Courier with id {guid} does not exist.");
+                throw new Exception($"Courier with id {guid} does not exist.");
             }
 
-            await _courierRepository.DeleteCourier(courierToDelete);
+            await _courierRepository.DeleteCourier(guid);
+        }
+
+        public async Task UpdateCourierAsync(Guid guid, UpdateCourier updateCourier)
+        {
+            var courier = await _courierRepository.GetCourier(guid) ??
+                throw new Exception($"Courier with id {guid} does not exist.");
+
+            _mapper.Map(updateCourier, courier);
+            courier.Guid = guid;
+
+            await _courierRepository.UpdateCourier(courier);
         }
 
         public async Task<IEnumerable<CourierDto>> GetAllCouriersAsync()

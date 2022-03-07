@@ -35,7 +35,7 @@ namespace PackageTrackingApp.Core.Domain
                 throw new Exception("Last name must contain only letters.");
             }
 
-            LastName = lastName;
+            LastName = lastName.FirstCharToUpper();
         }
 
         private void SetFirstName(string firstName)
@@ -45,7 +45,7 @@ namespace PackageTrackingApp.Core.Domain
                 throw new Exception("First name must contain only letters.");
             }
 
-            FirstName = firstName;
+            FirstName = firstName.FirstCharToUpper();
         }
 
         private void SetDateOfBirth(DateTime dateOfBirth)

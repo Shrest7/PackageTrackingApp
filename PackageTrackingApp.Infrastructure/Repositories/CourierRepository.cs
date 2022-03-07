@@ -23,9 +23,10 @@ namespace PackageTrackingApp.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteCourier(Courier courier)
+        public async Task DeleteCourier(Guid guid)
         {
-            _dbContext.Couriers.Remove(courier);
+            var courierToRemove = _dbContext.Couriers.SingleOrDefault(x => x.Guid == guid);
+            _dbContext.Couriers.Remove(courierToRemove);
             await _dbContext.SaveChangesAsync();
         }
 
@@ -35,5 +36,10 @@ namespace PackageTrackingApp.Infrastructure.Repositories
         public async Task<Courier> GetCourier(Guid guid)
             => await Task.FromResult(_dbContext.Couriers.SingleOrDefault(x => x.Guid == guid));
 
+        public async Task UpdateCourier(Courier courier)
+        {
+            _dbContext.Couriers.Update(courier);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

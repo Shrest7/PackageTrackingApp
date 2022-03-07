@@ -23,7 +23,7 @@ namespace PackageTrackingApp.Infrastructure.DTOs
                 }
                 else
                 {
-                    _experience = (float?) Math.Round(value.Value);
+                    _experience = (float?) Math.Round(value.Value, 2);
                 }
             }
         }

@@ -7,6 +7,7 @@ using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Infrastructure.Services;
 using PackageTrackingApp.Infrastructure.DTOs;
 using PackageTrackingApp.Infrastructure.Commands;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace PackageTrackingApp.Api.Controllers
 {
@@ -48,9 +49,18 @@ namespace PackageTrackingApp.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get()
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<IEnumerable<PackageDto>>> Get()
         {
-            return Ok(await _service.GetAllAsync());
+            var packages = await _service.GetAllAsync();
+
+            if (packages is null || !packages.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(packages);
         }
 
         [HttpDelete("{guid}")]
@@ -62,13 +72,30 @@ namespace PackageTrackingApp.Api.Controllers
             return NoContent();
         }
 
-        [HttpPut]
+        [HttpPut("{guid}")]
         [ProducesResponseType(204)]
-        public async Task<ActionResult> Update([FromBody] Package package) //TODO
+        public async Task<ActionResult> Put([FromRoute] Guid guid,
+            [FromBody] UpdatePackage package)
         {
-            await _service.UpdateAsync(package);
+            await _service.UpdateAsync(guid, package);
 
             return NoContent();
+        }
+
+        [HttpPatch("{guid}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult> Patch([FromRoute] Guid guid,
+            [FromBody] JsonPatchDocument<PatchPackage> patchDoc)
+        {
+            if(patchDoc is null)
+            {
+                return BadRequest("PatchDoc is null.");
+            }
+
+            await _service.UpdateAsync(guid, patchDoc);
+
+            return Ok();
         }
     }
 }

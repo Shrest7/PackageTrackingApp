@@ -12,6 +12,7 @@ namespace PackageTrackingApp.Core.Repositories
         Task<Courier> GetCourier(Guid guid);
         Task<IEnumerable<Courier>> GetAllCouriers();
         Task AddCourier(Courier courier);
-        Task DeleteCourier(Courier courier);
+        Task DeleteCourier(Guid guid);
+        Task UpdateCourier(Courier courier);
     }
 }

@@ -42,11 +42,10 @@ namespace PackageTrackingApp.Infrastructure.Repositories
             => await Task.FromResult(_dbContext.Users.SingleOrDefault(u => u.Email == email));
         public async Task<User> GetUserByLoginAsync(string login)
             => await Task.FromResult(_dbContext.Users.SingleOrDefault(u => u.Login == login));
-
-
         public async Task UpdateUserAsync(User user)
         {
-            throw new NotImplementedException();
+            _dbContext.Users.Update(user);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

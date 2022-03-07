@@ -22,6 +22,12 @@ namespace PackageTrackingApp.Extensions
         public static bool IsPhoneNumber(this string number)
             => PhoneNumberRegex.IsMatch(number);
 
-
+        public static string FirstCharToUpper(this string input) 
+            => input switch
+            {
+                null => throw new ArgumentNullException($"{nameof(input)} can not be null."),
+                "" => throw new ArgumentException($"{nameof(input)} cannot be empty"),
+                _ => string.Concat(input[0].ToString().ToUpper(), input.AsSpan(1))
+            };
     }
 }

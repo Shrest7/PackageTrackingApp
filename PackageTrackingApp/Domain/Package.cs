@@ -24,7 +24,7 @@ namespace PackageTrackingApp.Core.Domains
         public Guid SellerGuid { get; protected set; }
         [Required]
         public Guid CourierGuid { get; protected set; }
-        public string Name { get; protected set; }
+        public string Name { get; set; }
         public bool IsPaid { get; protected set; } = false;
         public bool IsDelivered { get; protected set; } = false;
         //public Address Destination { get; protected set; }

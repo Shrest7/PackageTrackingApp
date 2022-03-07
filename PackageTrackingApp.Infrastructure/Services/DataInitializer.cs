@@ -27,7 +27,7 @@ namespace PackageTrackingApp.Infrastructure.Services
 
         public async Task InitializeData()
         {
-            var users = await _userService.GetUsersAsync();
+            var users = await _userService.GetAllAsync();
             Guid[] defaultUsersGuids = new Guid[_numberOfUsersToInitialize];
             Guid[] defaultCourierGuids = new Guid[_numberOfCouriersToInitialize];
 
