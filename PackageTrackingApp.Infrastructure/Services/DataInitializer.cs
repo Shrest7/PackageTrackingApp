@@ -1,4 +1,6 @@
-﻿using PackageTrackingApp.Core.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using PackageTrackingApp.Core.Domain;
+using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.DTOs;
 using System;
@@ -14,15 +16,17 @@ namespace PackageTrackingApp.Infrastructure.Services
         private readonly IPackageService _packageService;
         private readonly IUserService _userService;
         private readonly ICourierService _courierService;
+        private readonly PackageTrackingContext _dbContext;
         private const int _numberOfUsersToInitialize = 4;
         private const int _numberOfCouriersToInitialize = 2;
 
         public DataInitializer(IPackageService packageService, IUserService userService,
-            ICourierService courierService)
+            ICourierService courierService, PackageTrackingContext dbContext)
         {
             _packageService = packageService;
             _userService = userService;
             _courierService = courierService;
+            _dbContext = dbContext;
         }
 
         public async Task InitializeData()
@@ -33,6 +37,7 @@ namespace PackageTrackingApp.Infrastructure.Services
 
             if (!users.Any())
             {
+                _dbContext.Users.FromSqlRaw("CREATE UNIQUE INDEX IDX_Login ON Users (Login)");
                 defaultUsersGuids = await InitializeUsers();
                 defaultCourierGuids = await InitializeCouriers();
 

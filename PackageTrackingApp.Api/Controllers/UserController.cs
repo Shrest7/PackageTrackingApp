@@ -32,6 +32,14 @@ namespace PackageTrackingApp.Api.Controllers
             return Created($"user/{guid}", null);
         }
 
+        [HttpPost("login")]
+        public async Task<ActionResult> LoginAsync(LoginUser loginUser)
+        {
+            var token = await _userService.LoginAsync(loginUser.Login, loginUser.Password);
+
+            return Ok(token);
+        }
+
         [HttpGet("{userId}")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]

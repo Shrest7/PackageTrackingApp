@@ -442,3 +442,22 @@ Error Number:547,State:0,Class:16
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
          Additional Info: An unhandled exception has occurred while executing the request.
 
+
+-------------- Error (2022-03-07 23:31:18.0816) --------------
+
+         Call Site: PackageTrackingApp.Api.Program.Main
+         Exception Type: System.FormatException
+         Exception Message: Could not parse the JSON file.
+         Stack Trace:    at Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider.Load(Stream stream)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.HandleException(ExceptionDispatchInfo info)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load()
+   at Microsoft.Extensions.Configuration.ConfigurationRoot..ctor(IList`1 providers)
+   at Microsoft.Extensions.Configuration.ConfigurationBuilder.Build()
+   at Microsoft.Extensions.Hosting.HostBuilder.BuildAppConfiguration()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at PackageTrackingApp.Api.Program.Main(String[] args) in C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Api\Program.cs:line 24
+         Additional Info: Error init
+

@@ -8,7 +8,6 @@ namespace PackageTrackingApp.Infrastructure.Commands
 {
     public class UpdatePackage
     {
-        public Guid CourierGuid { get; set; }
         public string Name { get; set; }
         public float Weight { get; set; }
         public float Height { get; set; }

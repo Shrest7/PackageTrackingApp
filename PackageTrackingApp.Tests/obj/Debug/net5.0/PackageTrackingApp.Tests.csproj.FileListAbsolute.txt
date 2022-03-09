@@ -163,3 +163,7 @@ C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debu
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Humanizer.dll
 C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\dravi\source\repos\PackageTrackingApp\PackageTrackingApp.Tests\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll

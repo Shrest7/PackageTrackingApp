@@ -1,4 +1,6 @@
-﻿using PackageTrackingApp.Core.Domain;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using PackageTrackingApp.Core.Domain;
 using PackageTrackingApp.Extensions;
 using System;
 using System.Collections.Generic;
@@ -6,15 +8,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace PackageTrackingApp.Core.Domains
 {
     public class User
     {
+        private readonly IPasswordHasher<User> _passwordHasher;
         [Key]
         public Guid Guid { get; protected set; }
         [Required]
+        [MaxLength(25)]
         public string Login { get; protected set; }
         [Required]
         public string Password { get; private set; }
@@ -31,8 +34,10 @@ namespace PackageTrackingApp.Core.Domains
         }
 
         public User(string email, string login, string role,
-            string password, string confirmPassword, DateTime dateOfBirth)
+            string password, string confirmPassword, DateTime dateOfBirth,
+            IPasswordHasher<User> passwordHasher)
         {
+            _passwordHasher = passwordHasher;
             CreatedAt = DateTime.UtcNow;
             SetLogin(login);
             SetEmail(email);
@@ -94,7 +99,7 @@ namespace PackageTrackingApp.Core.Domains
                 throw new Exception("Passwords do not match!");
             }
 
-            var hashedPassword = BCryptNet.HashPassword(password);
+            var hashedPassword = _passwordHasher.HashPassword(this, password);
 
             Password = hashedPassword;
             LastUpdated = DateTime.UtcNow;

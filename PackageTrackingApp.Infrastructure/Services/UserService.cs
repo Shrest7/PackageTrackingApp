@@ -11,6 +11,13 @@ using PackageTrackingApp.Core.Domain;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.JsonPatch;
 using PackageTrackingApp.Infrastructure.Commands;
+using Microsoft.AspNetCore.Identity;
+using JWT.Builder;
+using JWT.Algorithms;
+using PackageTrackingApp.Infrastructure.Settings;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace PackageTrackingApp.Infrastructure.Services
 {
@@ -19,13 +26,18 @@ namespace PackageTrackingApp.Infrastructure.Services
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<UserService> _logger;
+        private readonly IPasswordHasher<User> _passwordHasher;
+        private readonly AuthenticationSettings _authSettings;
 
         public UserService(IUserRepository userRepository, IMapper mapper,
-            ILogger<UserService> logger)
+            ILogger<UserService> logger, IPasswordHasher<User> passwordHasher,
+            AuthenticationSettings authSettings)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _logger = logger;
+            _passwordHasher = passwordHasher;
+            _authSettings = authSettings;
         }
 
         public async Task DeleteAsync(Guid userId)
@@ -42,9 +54,42 @@ namespace PackageTrackingApp.Infrastructure.Services
         public async Task<IEnumerable<UserDto>> GetAllAsync()
             => _mapper.Map<IEnumerable<UserDto>>(await _userRepository.GetAllUsersAsync());
 
-        public async Task LoginAsync(string login, string password)
+        public async Task<string> LoginAsync(string login, string password)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByLoginAsync(login);
+
+            if(user is null)
+            {
+                throw new Exception("Invalid credentials.");
+            }
+
+            var verificationResult = 
+                _passwordHasher.VerifyHashedPassword(user, user.Password, password);
+
+            if(verificationResult == PasswordVerificationResult.Failed)
+            {
+                throw new Exception("Invalid credentials.");
+            }
+
+            return GenerateJwt(user);
+        }
+
+        private string GenerateJwt(User user)
+        {
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authSettings.JwtKey));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var claims = new List<Claim>()
+            {
+                new Claim("Role", user.Role),
+                new Claim("DateOfBirth", user.DateOfBirth.ToString("dd-MM-yyyy"))
+            };
+
+            var token = new JwtSecurityToken(_authSettings.JwtIssuer,
+                _authSettings.JwtIssuer, claims, null,
+                DateTime.Now.AddMinutes(15), credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         public async Task<Guid> RegisterAsync(string email, string login, string password,
@@ -63,7 +108,7 @@ namespace PackageTrackingApp.Infrastructure.Services
             }
 
             user = new User(email, login, Roles.User, password, confirmPassword,
-                dateOfBirth);
+                dateOfBirth, _passwordHasher);
 
             await _userRepository.AddUserAsync(user);
 

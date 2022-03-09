@@ -14,7 +14,7 @@ namespace PackageTrackingApp.Infrastructure.Services
     {
         Task<UserDto> GetAsync(Guid userId);
         Task<IEnumerable<UserDto>> GetAllAsync();
-        Task LoginAsync(string login, string password);
+        Task<string> LoginAsync(string login, string password);
         Task<Guid> RegisterAsync(string email, string login, string password,
             string confirmPassword, DateTime dateOfBirth);
         Task UpdateAsync(Guid guid, JsonPatchDocument<UpdateUser> patchDoc);

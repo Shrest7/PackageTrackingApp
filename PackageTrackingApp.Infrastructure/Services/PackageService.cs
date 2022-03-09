@@ -73,6 +73,7 @@ namespace PackageTrackingApp.Infrastructure.Services
                 throw new ArgumentException($"Package with id: {guid} doesn't exist!");
 
             _mapper.Map(updatePackage, package);
+            package.Guid = guid;
 
             await _packageRepository.UpdateAsync(package);
         }

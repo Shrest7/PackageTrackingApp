@@ -17,7 +17,7 @@ namespace PackageTrackingApp.Core.Domains
         private const float _maxWeight = 25;
 
         [Key]
-        public Guid Guid { get; protected set; }
+        public Guid Guid { get; set; }
         [Required]
         public Guid CustomerGuid { get; protected set; }
         [Required]

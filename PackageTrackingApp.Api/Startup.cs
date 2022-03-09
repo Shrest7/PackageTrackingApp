@@ -1,23 +1,30 @@
 using Autofac;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PackageTrackingApp.Core.Domain;
+using PackageTrackingApp.Core.Domains;
 using PackageTrackingApp.Core.Repositories;
 using PackageTrackingApp.Infrastructure.Commands;
 using PackageTrackingApp.Infrastructure.Mappers;
 using PackageTrackingApp.Infrastructure.Repositories;
 using PackageTrackingApp.Infrastructure.Services;
+using PackageTrackingApp.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PackageTrackingApp.Api
@@ -34,10 +41,37 @@ namespace PackageTrackingApp.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var authSettings = new AuthenticationSettings();
+            Configuration.GetSection("Authentication").Bind(authSettings);
+
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //})
+            //    .AddJwtBearer(configuration =>
+            //{
+            //    configuration.RequireHttpsMetadata = false;
+            //    configuration.SaveToken = true;
+            //    configuration.TokenValidationParameters = new TokenValidationParameters()
+            //    {
+            //        ValidateLifetime = true,
+            //        ValidateIssuerSigningKey = true,
+            //        ValidIssuer = authSettings.JwtIssuer,
+            //        ValidAudience = authSettings.JwtIssuer,
+            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.JwtKey))
+            //    };
+            //});
+
             services.AddControllers()
                     .AddNewtonsoftJson();
             services.AddSingleton(MappingProfile.Initialize());
-            services.AddDbContext<PackageTrackingContext>(ServiceLifetime.Transient);
+            services.AddDbContext<PackageTrackingContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("PackageTrackingDatabase")));
+            services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            services.AddSingleton(authSettings);
+
 
             services.AddSwaggerGen(c =>
             {
