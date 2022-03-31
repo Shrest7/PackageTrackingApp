@@ -44,25 +44,25 @@ namespace PackageTrackingApp.Api
             var authSettings = new AuthenticationSettings();
             Configuration.GetSection("Authentication").Bind(authSettings);
 
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //    .AddJwtBearer(configuration =>
-            //{
-            //    configuration.RequireHttpsMetadata = false;
-            //    configuration.SaveToken = true;
-            //    configuration.TokenValidationParameters = new TokenValidationParameters()
-            //    {
-            //        ValidateLifetime = true,
-            //        ValidateIssuerSigningKey = true,
-            //        ValidIssuer = authSettings.JwtIssuer,
-            //        ValidAudience = authSettings.JwtIssuer,
-            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.JwtKey))
-            //    };
-            //});
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(configuration =>
+            {
+                configuration.RequireHttpsMetadata = false;
+                configuration.SaveToken = true;
+                configuration.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = authSettings.JwtIssuer,
+                    ValidAudience = authSettings.JwtIssuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.JwtKey))
+                };
+            });
 
             services.AddControllers()
                     .AddNewtonsoftJson();
